@@ -1,0 +1,16 @@
+<ion-toolbar>
+  <ion-icon class="set-icon-exit slot" slot="end" (click)="salirSesion()" name="exit-outline"></ion-icon>
+  <ion-icon class="set-icon-back" slot="start" (click)="navegar(['home'])" name="arrow-back-circle-outline"></ion-icon>
+</ion-toolbar>
+
+<ion-content>
+  <ion-grid class="logoapp">
+    <ion-row class="ion-aling-items-center">
+      <ion-col>
+        <ion-img src="\assets\icon\LogoApp.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button (click)="generaViaje()" size="large" expand="block">GENERAR VIAJE</ion-button> 
+</ion-content>

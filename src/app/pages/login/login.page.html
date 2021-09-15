@@ -1,0 +1,26 @@
+<ion-content>
+
+  <ion-grid class="logoapp">
+    <ion-row class="ion-aling-items-center">
+      <ion-col>
+        <ion-img src="\assets\icon\LogoApp.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="set-login">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input clear-input="true" [(ngModel)]="user.nombre" type="text" required="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input clear-input="true" type="password" required="true"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="navegar(['/home'])" size="large" expand="block">INGRESAR</ion-button> 
+    <h6 class="set-linkrecovery" (click)="navegar(['pass'])">Recuperar Contraseña</h6>
+  </div>
+ 
+</ion-content>
