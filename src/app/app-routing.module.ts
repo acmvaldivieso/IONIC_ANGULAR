@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/pass/pass.module').then( m => m.PassPageModule)
   },
   {
-    path: 'new',
-    loadChildren: () => import('./pages/new/new.module').then( m => m.NewPageModule)
-  },
-  {
     path: 'conductor',
     loadChildren: () => import('./pages/conductor/conductor.module').then( m => m.ConductorPageModule)
   },
