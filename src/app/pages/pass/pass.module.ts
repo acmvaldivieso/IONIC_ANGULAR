@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PassPageRoutingModule } from './pass-routing.module';
 
 import { PassPage } from './pass.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PassPageRoutingModule
+    PassPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PassPage]
 })
