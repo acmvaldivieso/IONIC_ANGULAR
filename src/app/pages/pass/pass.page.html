@@ -5,12 +5,26 @@
   
   <p class="set-parrafo">Ingrese el correo de la cuenta para recuperar la contraseña</p>
 
-  <div class="set-inputcorreo">
-    <ion-item>
-      <ion-label position="floating">Correo@ejemplo.cl</ion-label>
-      <ion-input clear-input="true" type="email" required="true"></ion-input>
-    </ion-item>
-
-    <ion-button (click)="alertrecuperar()" size="large" expand="block">RECUPERAR</ion-button> 
+  <div class="setForm">
+    <form #formulario="ngForm" (ngSubmit)="submit()">
+  
+      <ion-item>
+        <ion-input type="email"  
+                  placeholder="correo@correo.com"
+                  name="email"
+                  [(ngModel)]="correo"
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                  required>
+        </ion-input>
+      </ion-item >
+  
+      <ion-button (click)="correoEnviado()" 
+                  type="submit" 
+                  expand="block"
+                  [disabled]="formulario.invalid"
+                  class="setButton">
+        RECUPERAR
+      </ion-button>
+    </form>
   </div>
 </ion-content>

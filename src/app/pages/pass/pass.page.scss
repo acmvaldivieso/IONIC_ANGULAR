@@ -5,13 +5,6 @@
   cursor: pointer;
 }
 
-.set-inputcorreo{
-  margin-top: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
-  align-items: center;
-}
-
 .set-parrafo{
   margin-left: 55px;
   margin-right: 40px;
@@ -20,10 +13,11 @@
   text-align: center;
 }
 
-ion-button{
-  margin-top: 50px;
-  margin-left: 28px;
-  margin-right: 28px;
-  font-size: large;
-  align-items: center;
+.setForm {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.setButton{
+  margin-top: 30px;
 }

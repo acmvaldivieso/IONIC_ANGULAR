@@ -1,23 +1,46 @@
 <ion-toolbar>
   <ion-title></ion-title>
 </ion-toolbar>
+
+
 <ion-content>  
 
-  <app-logo class="setLogo"></app-logo>
+  <app-logo></app-logo>
 
-  <div class="set-login">
-    <ion-item>
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input clear-input="true" [(ngModel)]="user.nombre" type="text" required="true"></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input clear-input="true" type="password" required="true"></ion-input>
-    </ion-item>
+  <div class="ion-padding">
+    <form #formulario="ngForm" (ngSubmit)="submit()">
 
-    <ion-button (click)="navegar(['/home'])" size="large" expand="block">INGRESAR</ion-button> 
-    <h6 class="set-linkrecovery" (click)="navegar(['pass'])">Recuperar Contraseña</h6>
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input  required 
+                    name="user"
+                    [(ngModel)]="user.usuario" 
+                    minlength=3 
+                    maxlength=15 
+                    clear-input='true'>
+        </ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input  required 
+                    name="pass"
+                    [(ngModel)]="user.pass" 
+                    type="password" 
+                    clear-input='true'>
+        </ion-input>
+      </ion-item>
+
+
+      <ion-button (click)="ingresar(['/home'])" 
+                  type="submit"
+                  expand="block"
+                  [disabled]="formulario.invalid">
+          INICIAR SESION
+      </ion-button>
+    </form>
+    <p class="set-linkrecovery" (click)="navegar(['/pass'])">Recuperar contraseña</p>
   </div>
  
 </ion-content>
