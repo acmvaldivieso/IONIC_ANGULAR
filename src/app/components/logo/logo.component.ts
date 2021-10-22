@@ -15,7 +15,7 @@ export class LogoComponent implements OnInit, AfterViewInit { @ViewChild('logo',
   ngAfterViewInit() {
     const animation = this.animationCtrl.create()
       .addElement(this.logo.nativeElement)
-      .duration(1500)
+      .duration(1000)
       .iterations(1)
       .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
       .fromTo('opacity', '0', '1')
