@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'pasajero',
     loadChildren: () => import('./pages/pasajero/pasajero.module').then( m => m.PasajeroPageModule)
   },
+  {
+    path: '**',
+    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
+
 ];
 
 @NgModule({

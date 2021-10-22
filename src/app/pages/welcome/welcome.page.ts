@@ -8,7 +8,9 @@ import { AnimationController } from '@ionic/angular';
   styleUrls: ['./welcome.page.scss'],
 })
 
-export class WelcomePage implements OnInit, AfterViewInit { @ViewChild('welcome',{read: ElementRef, static:true}) welcome: ElementRef;
+export class WelcomePage implements OnInit, AfterViewInit { 
+  
+  @ViewChild('welcome',{read: ElementRef, static:true}) welcome: ElementRef;
 
   constructor(private router:Router, private animationCtrl: AnimationController) { }
 

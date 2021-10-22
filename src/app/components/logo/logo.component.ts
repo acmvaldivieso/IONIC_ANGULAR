@@ -6,7 +6,9 @@ import { AnimationController } from '@ionic/angular';
   templateUrl: './logo.component.html',
   styleUrls: ['./logo.component.scss'],
 })
-export class LogoComponent implements OnInit, AfterViewInit { @ViewChild('logo',{read: ElementRef, static:true}) logo: ElementRef;
+export class LogoComponent implements OnInit, AfterViewInit { 
+  
+  @ViewChild('logo',{read: ElementRef, static:true}) logo: ElementRef;
 
   constructor( private animationCtrl: AnimationController) { }
 
