@@ -7,12 +7,12 @@
   <app-logo></app-logo>
 
   <ul class="list-group">
-    <li *ngFor="let mensaje of mensajes | async" class="list-group-item">
+    <li *ngFor="let dato of datos | async" class="list-group-item">
       <h2>
-        {{mensaje.conductor}}
+        {{dato.conductor}}
       </h2>
       <p>
-        {{mensaje.ruta}}
+        {{dato.ruta}}
       </p>
     </li>
   </ul>

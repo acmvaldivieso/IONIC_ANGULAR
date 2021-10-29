@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getPosts(){
+  getAPI(){
     return this.http.get(this.apiURL);
   }
 }

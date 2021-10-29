@@ -10,14 +10,14 @@ import { DataService } from '../../services/data.service';
 })
 export class PasajeroPage implements OnInit {
 
-  mensajes: any;
+  datos: any;
 
   constructor(private router:Router, public alertController: AlertController, private dataService: DataService) { }
 
   //Cargar el dato de la API al crear la PAGE de PASAJERO
   ngOnInit() {
     
-    this.mensajes = this.dataService.getPosts();
+    this.datos = this.dataService.getAPI();
 
       // this.dataService.getPosts()
       // .subscribe(posts => {
