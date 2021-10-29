@@ -6,5 +6,16 @@
 <ion-content>
   <app-logo></app-logo>
 
+  <ul class="list-group">
+    <li *ngFor="let mensaje of mensajes | async" class="list-group-item">
+      <h2>
+        {{mensaje.conductor}}
+      </h2>
+      <p>
+        {{mensaje.ruta}}
+      </p>
+    </li>
+  </ul>
+
   <ion-button class="setButton" (click)="generaViaje()" size="large" expand="block">BUSCAR VIAJE</ion-button> 
 </ion-content>

@@ -1,0 +1,24 @@
+{"viaje":
+  [ 
+    {
+      "id": 1,
+    "conductor": "Jorge Perez",
+    "destino": "Av. Argentina",
+    "ruta": "Av.España",
+    "origen": "Sede Chorillos",
+    "celular": "+56 967582698",
+    "valor": "$1.500",
+    "patente": "DG-XX-33"
+    },
+    {
+      "id": 2,
+      "conductor": "David Pereira",
+      "destino": "Quilpué",
+      "ruta": "Troncal Urbano",
+      "origen": "Sede Chorillos",
+      "celular": "+56 967582698",
+      "valor": "$1.500",
+      "patente": "FG-XX-45"
+    }
+  ]
+}

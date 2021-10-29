@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-pasajero',
@@ -9,9 +10,20 @@ import { AlertController } from '@ionic/angular';
 })
 export class PasajeroPage implements OnInit {
 
-  constructor(private router:Router, public alertController: AlertController) { }
+  mensajes: any;
 
+  constructor(private router:Router, public alertController: AlertController, private dataService: DataService) { }
+
+  //Cargar el dato de la API al crear la PAGE de PASAJERO
   ngOnInit() {
+    
+    this.mensajes = this.dataService.getPosts();
+
+      // this.dataService.getPosts()
+      // .subscribe(posts => {
+      //   console.log(posts);
+      //   this.mensajes = posts;
+      // });
   }
 
   navegar(page){
