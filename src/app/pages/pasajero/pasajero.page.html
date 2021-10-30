@@ -6,16 +6,30 @@
 <ion-content>
   <app-logo></app-logo>
 
-  <ul class="list-group">
-    <li *ngFor="let dato of datos | async" class="list-group-item">
-      <h2>
-        {{dato.conductor}}
-      </h2>
-      <p>
-        {{dato.ruta}}
-      </p>
-    </li>
-  </ul>
+  <ion-card *ngFor="let dato of datos | async">
 
-  <ion-button class="setButton" (click)="generaViaje()" size="large" expand="block">BUSCAR VIAJE</ion-button> 
+    <ion-card-header>
+      <ion-item>
+        <ion-avatar slot="end">
+          <img [src]="dato.imagen">
+        </ion-avatar>
+        <ion-label>
+          <ion-card-subtitle>Carrera: {{dato.carrera}}</ion-card-subtitle>
+         <ion-card-title >{{dato.conductor}}</ion-card-title>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-label>Destino: {{dato.destino}}</ion-label><br>
+      <ion-label>Ruta: {{dato.ruta}}</ion-label><br>
+      <ion-label>Patente: {{dato.patente}}</ion-label><br>
+      <ion-label>Valor: {{dato.valor}}</ion-label><br>
+      <br>
+      <ion-label>Sobre mi: {{dato.resumen}}</ion-label>
+    </ion-card-content>
+    
+    <ion-button class="setButton" (click)="reservarViaje()" size="large" expand="block">RESERVAR</ion-button>
+  </ion-card> 
+
 </ion-content>

@@ -10,7 +10,7 @@ import { AlertController } from '@ionic/angular';
 
 export class ConductorPage implements OnInit {
 
-dato:any
+datos:any
 
   constructor(private router:Router, public alertController: AlertController) {}
 

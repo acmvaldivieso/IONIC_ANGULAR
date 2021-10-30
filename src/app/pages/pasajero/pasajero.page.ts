@@ -18,12 +18,6 @@ export class PasajeroPage implements OnInit {
   ngOnInit() {
     
     this.datos = this.dataService.getAPI();
-
-      // this.dataService.getPosts()
-      // .subscribe(posts => {
-      //   console.log(posts);
-      //   this.mensajes = posts;
-      // });
   }
 
   navegar(page){
@@ -43,9 +37,9 @@ export class PasajeroPage implements OnInit {
     await alert.present();
   }
 
-  async generaViaje(){
+  async reservarViaje(){
     const alert = await this.alertController.create({
-      message: 'Valor viaje $1.500 / 18:00 hrs',
+      message: 'Su viaje fue reservado con exito',
       buttons: [{
         text: 'Aceptar',
         handler: () => {this.router.navigate(['/home']);}

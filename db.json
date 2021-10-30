@@ -2,23 +2,42 @@
   [ 
     {
       "id": 1,
-    "conductor": "Jorge Perez",
-    "destino": "Av. Argentina",
-    "ruta": "Av.España",
-    "origen": "Sede Chorillos",
-    "celular": "+56 967582698",
-    "valor": "$1.500",
-    "patente": "DG-XX-33"
+      "conductor": "Jorge Perez",
+      "resumen":"Soy estudiante vespertino de Teatro de DUOC, voy en 2 año y viajo habitualmente a Valparaíso al salir de clases. Soy un conductor calmado y respetuoso al volante.",
+      "destino": "Valparaíso",
+      "ruta": "Av.España",
+      "origen": "Sede Chorrillos",
+      "celular": "+56 967582698",
+      "valor": "$1.500",
+      "patente": "DG-XX-33",
+      "carrera": "Teatro",
+      "imagen":"https://www.terram.cl/wp-content/uploads/2018/07/Valpara%C3%ADso-El-Ciudadano.jpg"
     },
     {
       "id": 2,
       "conductor": "David Pereira",
+      "resumen":"Soy estudiante vespertino de Analista programador de DUOC, voy en 1 año y viajo todos los dias a Quilpué después de mis clases. Tengo licencia hace 2 años y me gusta la velocidad.",
       "destino": "Quilpué",
       "ruta": "Troncal Urbano",
-      "origen": "Sede Chorillos",
+      "origen": "Sede Chorrillos",
+      "celular": "+56 967582698",
+      "valor": "$2.500",
+      "patente": "FG-XX-44",
+      "carrera": "Analista programación",
+      "imagen":"https://valparaisoregion.org/wp-content/uploads/2021/02/quilpue2.jpg"
+    },
+    {
+      "id": 3,
+      "conductor": "Rebecca Fernandez",
+      "resumen":"Soy estudiante dierno de Diseño y vestuario de DUOC, voy en 3 año y vivo mi ruta habitual es dentro de Viña del Mar. Me gustan los animales y tengo 2 perros.",
+      "destino": "Viña del Mar",
+      "ruta": "Av. Libertad",
+      "origen": "Sede Chorrillos",
       "celular": "+56 967582698",
       "valor": "$1.500",
-      "patente": "FG-XX-45"
+      "patente": "KK-GJ-33",
+      "carrera": "Diseño y vestuario",
+      "imagen":"https://www.remax.cl/AreaGuideImages/1028/2620/47872/7896641/vinavalpo2.jpg"
     }
   ]
 }
