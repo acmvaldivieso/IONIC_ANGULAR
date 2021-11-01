@@ -21,11 +21,9 @@ export class LoginPage implements OnInit {
 
   async ingresar(page){
     if(this.user.usuario == 'sebastian' && this.user.pass == '123' || this.user.usuario == 'alain' && this.user.pass == '123')
-    {  const navigationExtras: NavigationExtras={
-        state:{
-          nombre: this.user.usuario.toUpperCase()
-        }
-      };
+    {  
+      localStorage.setItem('usuario',this.user.usuario)
+      const navigationExtras: NavigationExtras={};
       this.router.navigate(page, navigationExtras);
       this.user.pass='';
       this.user.usuario='';

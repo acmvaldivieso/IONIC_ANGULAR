@@ -9,7 +9,9 @@ import { AlertController } from '@ionic/angular';
 })
 
 export class HomePage implements OnInit{
-dato:any;
+
+  dato = localStorage.getItem("usuario");
+
   constructor(private router:Router, public alertController: AlertController, private activeRoute: ActivatedRoute) {
     this.activeRoute.queryParams.subscribe(params => {
       if(this.router.getCurrentNavigation().extras.state){
@@ -32,7 +34,8 @@ dato:any;
         text: 'Cancelar'
       },{
         text: 'Aceptar',
-        handler: () => {this.router.navigate(['/login']);}
+        handler: () => {this.router.navigate(['/login'],);
+        localStorage.removeItem("usuario");}
       }]
     });
     await alert.present();
