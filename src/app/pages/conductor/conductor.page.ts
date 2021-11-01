@@ -36,7 +36,7 @@ datos:any
 
   async generaViaje(){
     const alert = await this.alertController.create({
-      message: 'Valor viaje $1.500 / 18:00 hrs',
+      message: 'Viaje generado!',
       buttons: [{
         text: 'Aceptar',
         handler: () => {this.router.navigate(['/home']);}

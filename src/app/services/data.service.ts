@@ -12,7 +12,9 @@ export class DataService {
     'Access-Control-Allow-Origin' :'*'
     })
     }
-   
+  
+  
+
   apiURL = 'http://localhost:3000/viaje'
 
   constructor(private http: HttpClient) { }
