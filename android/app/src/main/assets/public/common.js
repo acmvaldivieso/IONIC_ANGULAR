@@ -611,7 +611,12 @@ let MapsComponent = class MapsComponent {
     }
     geoNativo() {
         this.geolocation.getCurrentPosition().then((geoposition) => {
-            console.log(geoposition);
+            this.coordenadas = geoposition;
+            console.log(this.coordenadas);
+            this.latitud = this.coordenadas.coords.latitude;
+            console.log(this.latitud);
+            this.longitud = this.coordenadas.coords.longitude;
+            console.log(this.longitud);
         });
     }
     ngOnInit() { }
@@ -717,7 +722,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<p>\n  maps works!\n</p>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-card>\n  <ion-card-header>\n    <ion-card-subtitle>Coordenadas</ion-card-subtitle>\n    <ion-card-title>Tu posición actual</ion-card-title>\n  </ion-card-header>\n  <ion-card-content>\n    <ion-label>Latitud: {{latitud}}</ion-label> <br>\n    <ion-label>Longitud: {{longitud}}</ion-label> \n  </ion-card-content>\n</ion-card>\n");
 
 /***/ })
 

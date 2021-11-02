@@ -134,7 +134,7 @@ let ConductorPage = class ConductorPage {
     generaViaje() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertController.create({
-                message: 'Valor viaje $1.500 / 18:00 hrs',
+                message: 'Viaje generado!',
                 buttons: [{
                         text: 'Aceptar',
                         handler: () => { this.router.navigate(['/home']); }
