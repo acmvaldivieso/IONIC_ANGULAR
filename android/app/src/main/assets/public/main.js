@@ -33,16 +33,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _guards_no_validado_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./guards/no-validado.guard */ 3471);
+/* harmony import */ var _guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./guards/validado.guard */ 3140);
+
+
 
 
 
 const routes = [
     {
         path: 'home',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_home_home_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/home.module */ 7994)).then(m => m.HomePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_home_home_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/home.module */ 7994)).then(m => m.HomePageModule),
+        canActivate: [_guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__.ValidadoGuard]
     },
     {
         path: '',
@@ -51,23 +56,28 @@ const routes = [
     },
     {
         path: 'welcome',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_welcome_welcome_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/welcome/welcome.module */ 2282)).then(m => m.WelcomePageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_welcome_welcome_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/welcome/welcome.module */ 2282)).then(m => m.WelcomePageModule),
+        canActivate: [_guards_no_validado_guard__WEBPACK_IMPORTED_MODULE_0__.NoValidadoGuard]
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/login/login.module */ 1053)).then(m => m.LoginPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/login/login.module */ 1053)).then(m => m.LoginPageModule),
+        canActivate: [_guards_no_validado_guard__WEBPACK_IMPORTED_MODULE_0__.NoValidadoGuard]
     },
     {
         path: 'pass',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_pass_pass_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pass/pass.module */ 4478)).then(m => m.PassPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_pass_pass_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pass/pass.module */ 4478)).then(m => m.PassPageModule),
+        canActivate: [_guards_no_validado_guard__WEBPACK_IMPORTED_MODULE_0__.NoValidadoGuard]
     },
     {
         path: 'conductor',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_conductor_conductor_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/conductor/conductor.module */ 3908)).then(m => m.ConductorPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_conductor_conductor_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/conductor/conductor.module */ 3908)).then(m => m.ConductorPageModule),
+        canActivate: [_guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__.ValidadoGuard]
     },
     {
         path: 'pasajero',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_pasajero_pasajero_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pasajero/pasajero.module */ 6124)).then(m => m.PasajeroPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_pasajero_pasajero_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pasajero/pasajero.module */ 6124)).then(m => m.PasajeroPageModule),
+        canActivate: [_guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__.ValidadoGuard]
     },
     {
         path: '**',
@@ -76,12 +86,12 @@ const routes = [
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
-AppRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgModule)({
+AppRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
         imports: [
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__.PreloadAllModules })
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_4__.PreloadAllModules })
         ],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule]
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
     })
 ], AppRoutingModule);
 
@@ -175,6 +185,94 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ 3471:
+/*!*********************************************!*\
+  !*** ./src/app/guards/no-validado.guard.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NoValidadoGuard": () => (/* binding */ NoValidadoGuard)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic/angular */ 476);
+
+
+
+let NoValidadoGuard = class NoValidadoGuard {
+    constructor(navController) {
+        this.navController = navController;
+    }
+    canActivate(route, state) {
+        if (localStorage.getItem('ingresado')) {
+            this.navController.navigateRoot('/home');
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+};
+NoValidadoGuard.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_0__.NavController }
+];
+NoValidadoGuard = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+        providedIn: 'root'
+    })
+], NoValidadoGuard);
+
+
+
+/***/ }),
+
+/***/ 3140:
+/*!******************************************!*\
+  !*** ./src/app/guards/validado.guard.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ValidadoGuard": () => (/* binding */ ValidadoGuard)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic/angular */ 476);
+
+
+
+let ValidadoGuard = class ValidadoGuard {
+    constructor(navController) {
+        this.navController = navController;
+    }
+    canActivate(route, state) {
+        if (localStorage.getItem('ingresado')) {
+            return true;
+        }
+        else {
+            this.navController.navigateRoot('/login');
+            return false;
+        }
+    }
+};
+ValidadoGuard.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_0__.NavController }
+];
+ValidadoGuard = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+        providedIn: 'root'
+    })
+], ValidadoGuard);
 
 
 

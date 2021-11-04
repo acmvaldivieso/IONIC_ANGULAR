@@ -108,9 +108,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginPage = class LoginPage {
-    constructor(router, alertController) {
+    constructor(router, alertController, navController) {
         this.router = router;
         this.alertController = alertController;
+        this.navController = navController;
         this.user = {
             usuario: '',
             pass: ''
@@ -122,6 +123,7 @@ let LoginPage = class LoginPage {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, function* () {
             if (this.user.usuario == 'sebastian' && this.user.pass == '123' || this.user.usuario == 'alain' && this.user.pass == '123') {
                 localStorage.setItem('usuario', this.user.usuario);
+                localStorage.setItem('ingresado', 'true');
                 const navigationExtras = {};
                 this.router.navigate(page, navigationExtras);
                 this.user.pass = '';
@@ -135,6 +137,7 @@ let LoginPage = class LoginPage {
                         }]
                 });
                 yield alert.present();
+                this.navController.navigateRoot(page);
                 this.user.pass = '';
                 this.user.usuario = '';
             }
@@ -149,7 +152,8 @@ let LoginPage = class LoginPage {
 };
 LoginPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.AlertController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.AlertController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.NavController }
 ];
 LoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
@@ -189,7 +193,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-title></ion-title>\r\n</ion-toolbar>\r\n\r\n\r\n<ion-content>  \r\n\r\n  <app-logo></app-logo>\r\n\r\n\r\n  <div class=\"ion-padding\">\r\n    <form #formulario=\"ngForm\" (ngSubmit)=\"submit()\">\r\n\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Usuario</ion-label>\r\n        <ion-input  required \r\n                    name=\"user\"\r\n                    [(ngModel)]=\"user.usuario\" \r\n                    minlength=3 \r\n                    maxlength=15 \r\n                    clear-input='true'>\r\n        </ion-input>\r\n      </ion-item>\r\n    \r\n      <ion-item>\r\n        <ion-label position=\"floating\">Contraseña</ion-label>\r\n        <ion-input  required \r\n                    name=\"pass\"\r\n                    [(ngModel)]=\"user.pass\" \r\n                    type=\"password\" \r\n                    clear-input='true'>\r\n        </ion-input>\r\n      </ion-item>\r\n\r\n\r\n      <ion-button (click)=\"ingresar(['/home'])\" \r\n                  type=\"submit\"\r\n                  expand=\"block\"\r\n                  [disabled]=\"formulario.invalid\">\r\n          INICIAR SESION\r\n      </ion-button>\r\n    </form>\r\n    <p class=\"set-linkrecovery\" (click)=\"navegar(['/pass'])\">Recuperar contraseña</p>\r\n  </div>\r\n \r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-title></ion-title>\r\n</ion-toolbar>\r\n\r\n\r\n<ion-content>  \r\n\r\n  <app-logo></app-logo>\r\n\r\n\r\n  <div class=\"ion-padding\">\r\n    <form #formulario=\"ngForm\" (ngSubmit)=\"submit()\">\r\n\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Usuario</ion-label>\r\n        <ion-input  required name=\"user\" [(ngModel)]=\"user.usuario\" minlength=3 maxlength=15 clear-input='true'>\r\n        </ion-input>\r\n      </ion-item>\r\n    \r\n      <ion-item>\r\n        <ion-label position=\"floating\">Contraseña</ion-label>\r\n        <ion-input  required name=\"pass\" [(ngModel)]=\"user.pass\" type=\"password\" clear-input='true'>\r\n        </ion-input>\r\n      </ion-item>\r\n\r\n\r\n      <ion-button (click)=\"ingresar(['/home'])\" type=\"submit\" expand=\"block\" [disabled]=\"formulario.invalid\">\r\n          INICIAR SESION\r\n      </ion-button>\r\n    </form>\r\n    <p class=\"set-linkrecovery\" (click)=\"navegar(['/pass'])\">Recuperar contraseña</p>\r\n  </div>\r\n \r\n</ion-content>\r\n");
 
 /***/ })
 

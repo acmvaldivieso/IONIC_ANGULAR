@@ -606,20 +606,75 @@ let MapsComponent = class MapsComponent {
     constructor(geolocation) {
         this.geolocation = geolocation;
     }
-    ngAfterViewInit() {
-        this.geoNativo();
-    }
     geoNativo() {
         this.geolocation.getCurrentPosition().then((geoposition) => {
             this.coordenadas = geoposition;
             console.log(this.coordenadas);
-            this.latitud = this.coordenadas.coords.latitude;
-            console.log(this.latitud);
-            this.longitud = this.coordenadas.coords.longitude;
-            console.log(this.longitud);
+            var latitud = +(this.coordenadas.coords.latitude);
+            console.log(latitud);
+            var longitud = +(this.coordenadas.coords.longitude);
+            console.log(longitud);
+            this.lat = latitud;
+            this.long = longitud;
         });
     }
-    ngOnInit() { }
+    ngAfterViewInit() {
+        //llamar al metodo que recupera las coordenadas al momento de cargar la page
+        this.geoNativo();
+    }
+    ngOnInit() {
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic2ViYWNhZmZpIiwiYSI6ImNrdms2aWIxMjVyMDcycG1zdDl1Y3h6ajMifQ.mhVzhcoHBED9TvS0FVR_Yg';
+        const map = new mapboxgl.Map({
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [this.long, this.lat],
+            zoom: 15.5,
+            pitch: 45,
+            bearing: -17.6,
+            container: 'map',
+            antialias: true
+        });
+        map.on('load', () => {
+            // Insert the layer beneath any symbol layer.
+            const layers = map.getStyle().layers;
+            const labelLayerId = layers.find((layer) => layer.type === 'symbol' && layer.layout['text-field']).id;
+            // The 'building' layer in the Mapbox Streets
+            // vector tileset contains building height data
+            // from OpenStreetMap.
+            map.addLayer({
+                'id': 'add-3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 15,
+                'paint': {
+                    'fill-extrusion-color': '#aaa',
+                    // Use an 'interpolate' expression to
+                    // add a smooth transition effect to
+                    // the buildings as the user zooms in.
+                    'fill-extrusion-height': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'height']
+                    ],
+                    'fill-extrusion-base': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'min_height']
+                    ],
+                    'fill-extrusion-opacity': 0.6
+                }
+            }, labelLayerId);
+        });
+    }
 };
 MapsComponent.ctorParameters = () => [
     { type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_2__.Geolocation }
@@ -677,7 +732,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYXBzLmNvbXBvbmVudC5zY3NzIn0= */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("#map {\n  width: 100% !important;\n  height: 100% !important;\n  background-color: #f6f6f4;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0EseUJBQUE7QUFDSiIsImZpbGUiOiJtYXBzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI21hcHtcclxuICAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgICBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNmY2ZjQ7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -722,7 +777,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-card>\n  <ion-card-header>\n    <ion-card-subtitle>Coordenadas</ion-card-subtitle>\n    <ion-card-title>Tu posición actual</ion-card-title>\n  </ion-card-header>\n  <ion-card-content>\n    <ion-label>Latitud: {{latitud}}</ion-label> <br>\n    <ion-label>Longitud: {{longitud}}</ion-label> \n  </ion-card-content>\n</ion-card>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n\n  <div #map id='map'></div>\n\n</ion-content>\n\n<!-- <ion-card>\n  <ion-card-header>\n    <ion-card-subtitle>Coordenadas</ion-card-subtitle>\n    <ion-card-title>Tu posición actual</ion-card-title>\n  </ion-card-header>\n  <ion-card-content>\n    <ion-label>Latitud: {{latitud}}</ion-label> <br>\n    <ion-label>Longitud: {{longitud}}</ion-label> \n  </ion-card-content>\n</ion-card> -->\n");
 
 /***/ })
 

@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AnimationController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
@@ -10,7 +11,7 @@ export class NotFoundPage implements OnInit {
 
   @ViewChild('animar404',{read: ElementRef, static:true}) animar404: ElementRef;
 
-  constructor(private animationCtrl: AnimationController) { }
+  constructor(private animationCtrl: AnimationController, private router: Router) { }
 
   ngAfterViewInit(){
     const animation = this.animationCtrl
@@ -27,5 +28,7 @@ export class NotFoundPage implements OnInit {
   ngOnInit() {
   }
 
-
+  navegar(page){
+    this.router.navigate(page);
+  }
 }

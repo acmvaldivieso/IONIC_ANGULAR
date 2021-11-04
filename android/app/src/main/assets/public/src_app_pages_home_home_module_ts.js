@@ -135,6 +135,7 @@ let HomePage = class HomePage {
                         handler: () => {
                             this.router.navigate(['/login']);
                             localStorage.removeItem("usuario");
+                            localStorage.removeItem("ingresado");
                         }
                     }]
             });

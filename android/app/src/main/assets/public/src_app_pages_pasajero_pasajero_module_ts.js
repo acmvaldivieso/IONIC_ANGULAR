@@ -130,7 +130,10 @@ let PasajeroPage = class PasajeroPage {
                         text: 'Cancelar'
                     }, {
                         text: 'Aceptar',
-                        handler: () => { this.router.navigate(['/login']); }
+                        handler: () => {
+                            this.router.navigate(['/login']);
+                            localStorage.removeItem("ingresado");
+                        }
                     }]
             });
             yield alert.present();
@@ -192,6 +195,7 @@ let DataService = class DataService {
                 'Access-Control-Allow-Origin': '*'
             })
         };
+        //apiURL = 'http://Sebacaffi.github.io/data/db.json'
         this.apiURL = 'http://localhost:3000/viaje';
     }
     getAPI() {

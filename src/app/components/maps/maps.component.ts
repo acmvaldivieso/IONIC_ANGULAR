@@ -46,7 +46,7 @@ export class MapsComponent implements OnInit {
     
     const map = new mapboxgl.Map({
       style: 'mapbox://styles/mapbox/light-v10',
-      center: [this.long, this.lat],
+      center: [-71.623726, -33.042465],
       zoom: 15.5,
       pitch: 45,
       bearing: -17.6,

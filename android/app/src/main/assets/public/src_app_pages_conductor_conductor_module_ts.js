@@ -125,7 +125,10 @@ let ConductorPage = class ConductorPage {
                         text: 'Cancelar'
                     }, {
                         text: 'Aceptar',
-                        handler: () => { this.router.navigate(['/login']); }
+                        handler: () => {
+                            this.router.navigate(['/login']);
+                            localStorage.removeItem("ingresado");
+                        }
                     }]
             });
             yield alert.present();
@@ -186,7 +189,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n  <app-header></app-header>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n\r\n  <app-logo></app-logo>\r\n\r\n  <app-maps></app-maps>\r\n \r\n  <ion-button  class=\"setButton\" (click)=\"generaViaje()\" size=\"large\" expand=\"block\">GENERAR VIAJE</ion-button> \r\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n  <app-header></app-header>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n\r\n  <app-logo></app-logo>\r\n\r\n  <app-maps></app-maps>\r\n \r\n  <!-- <ion-button  class=\"setButton\" (click)=\"generaViaje()\" size=\"large\" expand=\"block\">GENERAR VIAJE</ion-button>  -->\r\n</ion-content>");
 
 /***/ })
 
