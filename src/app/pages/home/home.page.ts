@@ -35,7 +35,8 @@ export class HomePage implements OnInit{
       },{
         text: 'Aceptar',
         handler: () => {this.router.navigate(['/login'],);
-        localStorage.removeItem("usuario");}
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("ingresado");}
       }]
     });
     await alert.present();

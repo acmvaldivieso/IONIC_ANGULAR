@@ -13,30 +13,18 @@
 
       <ion-item>
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input  required 
-                    name="user"
-                    [(ngModel)]="user.usuario" 
-                    minlength=3 
-                    maxlength=15 
-                    clear-input='true'>
+        <ion-input  required name="user" [(ngModel)]="user.usuario" minlength=3 maxlength=15 clear-input='true'>
         </ion-input>
       </ion-item>
     
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input  required 
-                    name="pass"
-                    [(ngModel)]="user.pass" 
-                    type="password" 
-                    clear-input='true'>
+        <ion-input  required name="pass" [(ngModel)]="user.pass" type="password" clear-input='true'>
         </ion-input>
       </ion-item>
 
 
-      <ion-button (click)="ingresar(['/home'])" 
-                  type="submit"
-                  expand="block"
-                  [disabled]="formulario.invalid">
+      <ion-button (click)="ingresar(['/home'])" type="submit" expand="block" [disabled]="formulario.invalid">
           INICIAR SESION
       </ion-button>
     </form>

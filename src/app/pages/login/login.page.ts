@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router:Router, public alertController: AlertController) { }
+  constructor(private router:Router, public alertController: AlertController, public navController: NavController) { }
 
   ngOnInit() {
   }
@@ -22,7 +22,8 @@ export class LoginPage implements OnInit {
   async ingresar(page){
     if(this.user.usuario == 'sebastian' && this.user.pass == '123' || this.user.usuario == 'alain' && this.user.pass == '123')
     {  
-      localStorage.setItem('usuario',this.user.usuario)
+      localStorage.setItem('usuario',this.user.usuario);
+      localStorage.setItem('ingresado', 'true');
       const navigationExtras: NavigationExtras={};
       this.router.navigate(page, navigationExtras);
       this.user.pass='';
@@ -35,6 +36,7 @@ export class LoginPage implements OnInit {
         }]
       });
       await alert.present();
+      this.navController.navigateRoot(page);
       this.user.pass='';
       this.user.usuario='';
     }

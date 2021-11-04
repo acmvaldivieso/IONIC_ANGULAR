@@ -31,7 +31,8 @@ export class PasajeroPage implements OnInit {
         text: 'Cancelar'
       },{
         text: 'Aceptar',
-        handler: () => {this.router.navigate(['/login']);}
+        handler: () => {this.router.navigate(['/login']);
+        localStorage.removeItem("ingresado");}
       }]
     });
     await alert.present();
