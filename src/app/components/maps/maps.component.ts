@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 
+
 declare var mapboxgl: any;
 declare var MapboxGeocoder: any;
 
@@ -20,16 +21,11 @@ export class MapsComponent implements OnInit {
   ngOnInit() {
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2ViYWNhZmZpIiwiYSI6ImNrdms2aWIxMjVyMDcycG1zdDl1Y3h6ajMifQ.mhVzhcoHBED9TvS0FVR_Yg';
-    
-    const map = new mapboxgl.Map({
-      style: 'mapbox://styles/mapbox/light-v10',
-      center: [-71.545821, -33.009761],
-      zoom: 15.5,
-      pitch: 45,
-      bearing: -17.6,
-      container: 'map',
-      antialias: true
-    });
+    const map = new mapboxgl.Map({ 
+      container: 'map', 
+      style: 'mapbox://styles/mapbox/streets-v9',  
+      center: [-71.545821, -33.009761],  
+      zoom: 13});
 
     map.on('load', () => {
       
@@ -144,14 +140,12 @@ export class MapsComponent implements OnInit {
   }
 
   //Metodo para obtener coordendas desde el GPS
+
   geoNativo(){
-    this.geolocation.getCurrentPosition().then((geoposition: Geoposition) => {
-        this.coordenadas = geoposition;
-        console.log(this.coordenadas);
-        var latitud: number = + (this.coordenadas.coords.latitude);
-        console.log(latitud);
-        var longitud: number = + (this.coordenadas.coords.longitude);
-        console.log(longitud);
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.long = resp.coords.longitude;
+      this.lat = resp.coords.latitude;
+      console.log(this.long, this.lat);
     })
   }
 
