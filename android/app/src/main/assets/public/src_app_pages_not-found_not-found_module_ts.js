@@ -171,7 +171,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>Not Found</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <h1 class=\"ion-padding\" style=\"width: 100%; text-align: center;\">Ooooops 404...</h1>\n  <ion-card>\n      <img src=\"\\assets\\404.png\" alt=\"\">\n  </ion-card>\n\n  <ion-card>\n      <img  class=\"setGIF\" #animar404 src=\"\\assets\\gif404.gif\" alt=\"\">\n  </ion-card>\n\n  <ion-button color=\"success\"(click)=\"navegar(['/home'])\" expand=\"block\">Volver Home</ion-button>\n</ion-content>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>Not Found</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card>\n      <img src=\"\\assets\\404.jpg\" alt=\"\">\n  </ion-card>\n\n  <ion-card>\n      <img  class=\"setGIF\" #animar404 src=\"\\assets\\gif404.gif\" alt=\"\">\n  </ion-card>\n\n  <ion-button color=\"success\"(click)=\"navegar(['/home'])\" expand=\"block\">Volver Home</ion-button>\n</ion-content>\n");
 
 /***/ })
 

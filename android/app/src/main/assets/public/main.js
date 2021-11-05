@@ -46,7 +46,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'home',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_home_home_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/home.module */ 7994)).then(m => m.HomePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_home_home_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/home.module */ 7994)).then(m => m.HomePageModule),
         canActivate: [_guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__.ValidadoGuard]
     },
     {
@@ -61,22 +61,22 @@ const routes = [
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/login/login.module */ 1053)).then(m => m.LoginPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/login/login.module */ 1053)).then(m => m.LoginPageModule),
         canActivate: [_guards_no_validado_guard__WEBPACK_IMPORTED_MODULE_0__.NoValidadoGuard]
     },
     {
         path: 'pass',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_pass_pass_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pass/pass.module */ 4478)).then(m => m.PassPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_pass_pass_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pass/pass.module */ 4478)).then(m => m.PassPageModule),
         canActivate: [_guards_no_validado_guard__WEBPACK_IMPORTED_MODULE_0__.NoValidadoGuard]
     },
     {
         path: 'conductor',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_conductor_conductor_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/conductor/conductor.module */ 3908)).then(m => m.ConductorPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_conductor_conductor_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/conductor/conductor.module */ 3908)).then(m => m.ConductorPageModule),
         canActivate: [_guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__.ValidadoGuard]
     },
     {
         path: 'pasajero',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_pasajero_pasajero_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pasajero/pasajero.module */ 6124)).then(m => m.PasajeroPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_pasajero_pasajero_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pasajero/pasajero.module */ 6124)).then(m => m.PasajeroPageModule),
         canActivate: [_guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__.ValidadoGuard]
     },
     {
