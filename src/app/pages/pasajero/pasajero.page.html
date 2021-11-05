@@ -6,7 +6,7 @@
 <ion-content>
   <app-logo></app-logo>
 
-  <ion-card *ngFor="let dato of datos | async">
+  <ion-card *ngFor="let dato of viaje">
 
     <ion-card-header>
       <ion-item>
@@ -14,7 +14,7 @@
           <img [src]="dato.imagen">
         </ion-avatar>
         <ion-label>
-          <ion-card-subtitle>Carrera: {{dato.carrera}}</ion-card-subtitle>
+          <ion-card-subtitle>Carrera: {{dato.destino}}</ion-card-subtitle>
          <ion-card-title >{{dato.conductor}}</ion-card-title>
         </ion-label>
       </ion-item>

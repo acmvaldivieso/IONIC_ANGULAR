@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Respuesta, Viaje } from '../interfaces/viaje-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +14,14 @@ export class DataService {
     })
     }
   
-  //apiURL = 'http://Sebacaffi.github.io/data/db.json'
+  apiURL = 'http://Sebacaffi.github.io/data/db.json'
 
 
-  apiURL = 'http://localhost:3000/viaje'
+  //apiURL = 'http://localhost:3000/viaje'
 
   constructor(private http: HttpClient) { }
 
   getAPI(){
-    return this.http.get(this.apiURL);
+    return this.http.get<Respuesta>(this.apiURL);
   }
 }

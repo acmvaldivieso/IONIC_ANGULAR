@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { DataService } from '../../services/data.service';
 
+import { Respuesta, Viaje } from 'src/app/interfaces/viaje-interface';
+
 @Component({
   selector: 'app-pasajero',
   templateUrl: './pasajero.page.html',
@@ -10,14 +12,19 @@ import { DataService } from '../../services/data.service';
 })
 export class PasajeroPage implements OnInit {
 
-  datos: any;
+  viaje: Viaje[] = [];
 
   constructor(private router:Router, public alertController: AlertController, private dataService: DataService) { }
 
   //Cargar el dato de la API al crear la PAGE de PASAJERO
   ngOnInit() {
     
-    this.datos = this.dataService.getAPI();
+    this.dataService.getAPI().subscribe(resp =>
+      {
+        console.log(resp);
+        this.viaje.push(...resp.viaje);
+      })
+    //this.datos = this.dataService.getAPI();
   }
 
   navegar(page){
