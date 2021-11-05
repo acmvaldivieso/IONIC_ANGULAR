@@ -16,9 +16,6 @@ export class DataService {
   
   apiURL = 'http://Sebacaffi.github.io/data/db.json'
 
-
-  //apiURL = 'http://localhost:3000/viaje'
-
   constructor(private http: HttpClient) { }
 
   getAPI(){

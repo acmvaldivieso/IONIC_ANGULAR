@@ -1,9 +1,8 @@
-import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 
-
 declare var mapboxgl: any;
+declare var MapboxGeocoder: any;
 
 @Component({
   selector: 'app-maps',
@@ -12,41 +11,19 @@ declare var mapboxgl: any;
 })
 export class MapsComponent implements OnInit {
 
-
   coordenadas: any;
   lat:number;
   long:number;
 
   constructor(public geolocation: Geolocation) { }
-
-  geoNativo(){
-    this.geolocation.getCurrentPosition().then((geoposition: Geoposition) => {
-        this.coordenadas = geoposition;
-        console.log(this.coordenadas);
-        var latitud: number = + (this.coordenadas.coords.latitude);
-        console.log(latitud);
-        var longitud: number = + (this.coordenadas.coords.longitude);
-        console.log(longitud);
-
-        this.lat = latitud;
-        this.long = longitud;
-    })
-  }
-
-  ngAfterViewInit(){
-
-    //llamar al metodo que recupera las coordenadas al momento de cargar la page
-    this.geoNativo();
-
-
-  }
-
+  
   ngOnInit() {
+
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2ViYWNhZmZpIiwiYSI6ImNrdms2aWIxMjVyMDcycG1zdDl1Y3h6ajMifQ.mhVzhcoHBED9TvS0FVR_Yg';
     
     const map = new mapboxgl.Map({
       style: 'mapbox://styles/mapbox/light-v10',
-      center: [-71.623726, -33.042465],
+      center: [-71.545821, -33.009761],
       zoom: 15.5,
       pitch: 45,
       bearing: -17.6,
@@ -55,16 +32,20 @@ export class MapsComponent implements OnInit {
     });
 
     map.on('load', () => {
-      // Insert the layer beneath any symbol layer.
+      
+      //recalcular las dimesiones del mapa al momento de la carga
+      map.resize();
+
+      //Marker
+      new mapboxgl.Marker()
+        .setLngLat([-71.545821, -33.009761])
+        .addTo(map);
+
       const layers = map.getStyle().layers;
 
       const labelLayerId = layers.find(
         (layer) => layer.type === 'symbol' && layer.layout['text-field']
       ).id;
-       
-      // The 'building' layer in the Mapbox Streets
-      // vector tileset contains building height data
-      // from OpenStreetMap.
       map.addLayer(
           {
             'id': 'add-3d-buildings',
@@ -75,10 +56,6 @@ export class MapsComponent implements OnInit {
             'minzoom': 15,
             'paint': {
             'fill-extrusion-color': '#aaa',
-            
-            // Use an 'interpolate' expression to
-            // add a smooth transition effect to
-            // the buildings as the user zooms in.
             'fill-extrusion-height': [
               'interpolate',
               ['linear'],
@@ -103,6 +80,36 @@ export class MapsComponent implements OnInit {
         labelLayerId
         );
       });
+
+    map.addControl(new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken
+    }));
+
+    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+          enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    }));
+
   }
 
+  //Metodo para obtener coordendas desde el GPS
+  geoNativo(){
+    this.geolocation.getCurrentPosition().then((geoposition: Geoposition) => {
+        this.coordenadas = geoposition;
+        console.log(this.coordenadas);
+        var latitud: number = + (this.coordenadas.coords.latitude);
+        console.log(latitud);
+        var longitud: number = + (this.coordenadas.coords.longitude);
+        console.log(longitud);
+    })
+  }
+
+  ngAfterViewInit(){
+
+    //llamar al metodo que recupera las coordenadas al momento de cargar la page
+    this.geoNativo();
+  }
 }
