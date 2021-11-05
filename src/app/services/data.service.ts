@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Respuesta, Viaje } from '../interfaces/viaje-interface';
+import { retry } from 'rxjs/operators'; 
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +22,10 @@ export class DataService {
 
   getAPI(){
     return this.http.get<Respuesta>(this.apiURL);
+  }
+
+  createViaje(conductor):Observable<any>{
+    return this.http.post(this.apiURL+'viaje', conductor,this.httpOptions).pipe(
+      retry(3)); 
   }
 }
