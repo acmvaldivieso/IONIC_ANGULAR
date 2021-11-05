@@ -41,6 +41,54 @@ export class MapsComponent implements OnInit {
         .setLngLat([-71.545821, -33.009761])
         .addTo(map);
 
+
+      //Agregar descripción en el mapa de un punto en especifico
+      map.addSource('places', {
+        
+        'type': 'geojson',
+        'data': {
+          'type': 'FeatureCollection',
+          'features': [{
+            'type': 'Feature',
+            'properties': {
+              'description':
+              '<strong>Tienda LEGO</strong><p><a href="https://www.tiendalego.cl/" target="_blank" title="Opens in a new window">Tienda LEGO CHILE</a> es la tienda oficial de LEGO en Chile, donde se pueden encontrar los diferentes set disponibles, incluyendo LEGO bricks.</p>',
+              'icon': 'rocket-15'
+            },
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-71.545821, -33.009761]
+            }
+          }]
+        }
+      });
+
+      map.addLayer({
+        'id': 'places',
+        'type': 'symbol',
+        'source': 'places',
+        'layout': {
+        'icon-image': '{icon}',
+        'icon-allow-overlap': true
+        }
+      });
+
+      //Desplegar la info al hacer click en places
+      map.on('click', 'places', (e) => {
+       
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const description = e.features[0].properties.description;
+  
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+         
+        new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(description)
+        .addTo(map);
+        });
+
       const layers = map.getStyle().layers;
 
       const labelLayerId = layers.find(

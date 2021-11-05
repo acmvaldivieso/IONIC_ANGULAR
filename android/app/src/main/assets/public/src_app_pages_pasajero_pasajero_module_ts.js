@@ -114,10 +114,15 @@ let PasajeroPage = class PasajeroPage {
         this.router = router;
         this.alertController = alertController;
         this.dataService = dataService;
+        this.viaje = [];
     }
     //Cargar el dato de la API al crear la PAGE de PASAJERO
     ngOnInit() {
-        this.datos = this.dataService.getAPI();
+        this.dataService.getAPI().subscribe(resp => {
+            console.log(resp);
+            this.viaje.push(...resp.viaje);
+        });
+        //this.datos = this.dataService.getAPI();
     }
     navegar(page) {
         this.router.navigate(page);
@@ -195,8 +200,7 @@ let DataService = class DataService {
                 'Access-Control-Allow-Origin': '*'
             })
         };
-        //apiURL = 'http://Sebacaffi.github.io/data/db.json'
-        this.apiURL = 'http://localhost:3000/viaje';
+        this.apiURL = 'http://Sebacaffi.github.io/data/db.json';
     }
     getAPI() {
         return this.http.get(this.apiURL);
@@ -241,7 +245,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n  <app-header></app-header>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n  <app-logo></app-logo>\r\n\r\n  <ion-card *ngFor=\"let dato of datos | async\">\r\n\r\n    <ion-card-header>\r\n      <ion-item>\r\n        <ion-avatar slot=\"end\">\r\n          <img [src]=\"dato.imagen\">\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <ion-card-subtitle>Carrera: {{dato.carrera}}</ion-card-subtitle>\r\n         <ion-card-title >{{dato.conductor}}</ion-card-title>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-header>\r\n\r\n    <ion-card-content>\r\n      <ion-label>Destino: {{dato.destino}}</ion-label><br>\r\n      <ion-label>Ruta: {{dato.ruta}}</ion-label><br>\r\n      <ion-label>Patente: {{dato.patente}}</ion-label><br>\r\n      <ion-label>Valor: {{dato.valor}}</ion-label><br>\r\n      <br>\r\n      <ion-label>Sobre mi: {{dato.resumen}}</ion-label>\r\n    </ion-card-content>\r\n    \r\n    <ion-button class=\"setButton\" (click)=\"reservarViaje()\" size=\"large\" expand=\"block\">RESERVAR</ion-button>\r\n  </ion-card> \r\n\r\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n  <app-header></app-header>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n  <app-logo></app-logo>\r\n\r\n  <ion-card *ngFor=\"let dato of viaje\">\r\n\r\n    <ion-card-header>\r\n      <ion-item>\r\n        <ion-avatar slot=\"end\">\r\n          <img [src]=\"dato.imagen\">\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <ion-card-subtitle>Carrera: {{dato.destino}}</ion-card-subtitle>\r\n         <ion-card-title >{{dato.conductor}}</ion-card-title>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-header>\r\n\r\n    <ion-card-content>\r\n      <ion-label>Destino: {{dato.destino}}</ion-label><br>\r\n      <ion-label>Ruta: {{dato.ruta}}</ion-label><br>\r\n      <ion-label>Patente: {{dato.patente}}</ion-label><br>\r\n      <ion-label>Valor: {{dato.valor}}</ion-label><br>\r\n      <br>\r\n      <ion-label>Sobre mi: {{dato.resumen}}</ion-label>\r\n    </ion-card-content>\r\n    \r\n    <ion-button class=\"setButton\" (click)=\"reservarViaje()\" size=\"large\" expand=\"block\">RESERVAR</ion-button>\r\n  </ion-card> \r\n\r\n</ion-content>");
 
 /***/ })
 

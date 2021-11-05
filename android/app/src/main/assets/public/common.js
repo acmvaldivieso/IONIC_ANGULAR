@@ -606,27 +606,11 @@ let MapsComponent = class MapsComponent {
     constructor(geolocation) {
         this.geolocation = geolocation;
     }
-    geoNativo() {
-        this.geolocation.getCurrentPosition().then((geoposition) => {
-            this.coordenadas = geoposition;
-            console.log(this.coordenadas);
-            var latitud = +(this.coordenadas.coords.latitude);
-            console.log(latitud);
-            var longitud = +(this.coordenadas.coords.longitude);
-            console.log(longitud);
-            this.lat = latitud;
-            this.long = longitud;
-        });
-    }
-    ngAfterViewInit() {
-        //llamar al metodo que recupera las coordenadas al momento de cargar la page
-        this.geoNativo();
-    }
     ngOnInit() {
         mapboxgl.accessToken = 'pk.eyJ1Ijoic2ViYWNhZmZpIiwiYSI6ImNrdms2aWIxMjVyMDcycG1zdDl1Y3h6ajMifQ.mhVzhcoHBED9TvS0FVR_Yg';
         const map = new mapboxgl.Map({
             style: 'mapbox://styles/mapbox/light-v10',
-            center: [this.long, this.lat],
+            center: [-71.545821, -33.009761],
             zoom: 15.5,
             pitch: 45,
             bearing: -17.6,
@@ -634,12 +618,14 @@ let MapsComponent = class MapsComponent {
             antialias: true
         });
         map.on('load', () => {
-            // Insert the layer beneath any symbol layer.
+            //recalcular las dimesiones del mapa al momento de la carga
+            map.resize();
+            //Marker
+            new mapboxgl.Marker()
+                .setLngLat([-71.545821, -33.009761])
+                .addTo(map);
             const layers = map.getStyle().layers;
             const labelLayerId = layers.find((layer) => layer.type === 'symbol' && layer.layout['text-field']).id;
-            // The 'building' layer in the Mapbox Streets
-            // vector tileset contains building height data
-            // from OpenStreetMap.
             map.addLayer({
                 'id': 'add-3d-buildings',
                 'source': 'composite',
@@ -649,9 +635,6 @@ let MapsComponent = class MapsComponent {
                 'minzoom': 15,
                 'paint': {
                     'fill-extrusion-color': '#aaa',
-                    // Use an 'interpolate' expression to
-                    // add a smooth transition effect to
-                    // the buildings as the user zooms in.
                     'fill-extrusion-height': [
                         'interpolate',
                         ['linear'],
@@ -674,6 +657,31 @@ let MapsComponent = class MapsComponent {
                 }
             }, labelLayerId);
         });
+        map.addControl(new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken
+        }));
+        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        }));
+    }
+    //Metodo para obtener coordendas desde el GPS
+    geoNativo() {
+        this.geolocation.getCurrentPosition().then((geoposition) => {
+            this.coordenadas = geoposition;
+            console.log(this.coordenadas);
+            var latitud = +(this.coordenadas.coords.latitude);
+            console.log(latitud);
+            var longitud = +(this.coordenadas.coords.longitude);
+            console.log(longitud);
+        });
+    }
+    ngAfterViewInit() {
+        //llamar al metodo que recupera las coordenadas al momento de cargar la page
+        this.geoNativo();
     }
 };
 MapsComponent.ctorParameters = () => [
@@ -732,7 +740,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("#map {\n  width: 100% !important;\n  height: 100% !important;\n  background-color: #f6f6f4;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0EseUJBQUE7QUFDSiIsImZpbGUiOiJtYXBzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI21hcHtcclxuICAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgICBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNmY2ZjQ7XHJcbn0iXX0= */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("#map {\n  width: 100% !important;\n  height: 85% !important;\n  background-color: #f6f6f4;\n  margin-top: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxzQkFBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQUNKIiwiZmlsZSI6Im1hcHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbWFwe1xyXG4gICAgd2lkdGg6ICAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgICBoZWlnaHQ6IDg1JSAhaW1wb3J0YW50O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y2ZjZmNDtcclxuICAgIG1hcmdpbi10b3A6IDE1cHg7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -777,7 +785,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n\n  <div #map id='map'></div>\n\n</ion-content>\n\n<!-- <ion-card>\n  <ion-card-header>\n    <ion-card-subtitle>Coordenadas</ion-card-subtitle>\n    <ion-card-title>Tu posición actual</ion-card-title>\n  </ion-card-header>\n  <ion-card-content>\n    <ion-label>Latitud: {{latitud}}</ion-label> <br>\n    <ion-label>Longitud: {{longitud}}</ion-label> \n  </ion-card-content>\n</ion-card> -->\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div #map id='map'></div>");
 
 /***/ })
 

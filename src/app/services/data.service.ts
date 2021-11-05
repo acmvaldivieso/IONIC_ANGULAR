@@ -12,7 +12,7 @@ export class DataService {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin' :'*'
     })
-    }
+  }
   
   apiURL = 'http://Sebacaffi.github.io/data/db.json'
 

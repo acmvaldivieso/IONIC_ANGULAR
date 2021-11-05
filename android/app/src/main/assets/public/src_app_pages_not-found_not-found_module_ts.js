@@ -92,19 +92,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NotFoundPage": () => (/* binding */ NotFoundPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_not_found_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./not-found.page.html */ 7303);
 /* harmony import */ var _not_found_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./not-found.page.scss */ 8522);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
+
 
 
 
 
 
 let NotFoundPage = class NotFoundPage {
-    constructor(animationCtrl) {
+    constructor(animationCtrl, router) {
         this.animationCtrl = animationCtrl;
+        this.router = router;
     }
     ngAfterViewInit() {
         const animation = this.animationCtrl
@@ -119,15 +122,19 @@ let NotFoundPage = class NotFoundPage {
     }
     ngOnInit() {
     }
+    navegar(page) {
+        this.router.navigate(page);
+    }
 };
 NotFoundPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.AnimationController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.AnimationController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
 ];
 NotFoundPage.propDecorators = {
-    animar404: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__.ViewChild, args: ['animar404', { read: _angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef, static: true },] }]
+    animar404: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.ViewChild, args: ['animar404', { read: _angular_core__WEBPACK_IMPORTED_MODULE_4__.ElementRef, static: true },] }]
 };
-NotFoundPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+NotFoundPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-not-found',
         template: _raw_loader_not_found_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_not_found_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -149,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJub3QtZm91bmQucGFnZS5zY3NzIn0= */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-button {\n  margin-left: 80px;\n  margin-right: 80px;\n}\n\n.setGIF {\n  margin-left: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vdC1mb3VuZC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0FBQ0o7O0FBRUE7RUFDSSxpQkFBQTtBQUNKIiwiZmlsZSI6Im5vdC1mb3VuZC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tYnV0dG9ue1xyXG4gICAgbWFyZ2luLWxlZnQ6IDgwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDgwcHg7XHJcbn1cclxuXHJcbi5zZXRHSUZ7XHJcbiAgICBtYXJnaW4tbGVmdDogODBweDtcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -164,7 +171,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>Not Found</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <h1 class=\"ion-padding\" style=\"width: 100%; text-align: center;\">Ooooops 404...</h1>\n  <ion-card>\n      <img src=\"\\assets\\404.png\" alt=\"\">\n  </ion-card>\n\n  <ion-card>\n      <img #animar404 src=\"\\assets\\gif404.gif\" alt=\"\">\n  </ion-card>\n</ion-content>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>Not Found</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <h1 class=\"ion-padding\" style=\"width: 100%; text-align: center;\">Ooooops 404...</h1>\n  <ion-card>\n      <img src=\"\\assets\\404.png\" alt=\"\">\n  </ion-card>\n\n  <ion-card>\n      <img  class=\"setGIF\" #animar404 src=\"\\assets\\gif404.gif\" alt=\"\">\n  </ion-card>\n\n  <ion-button color=\"success\"(click)=\"navegar(['/home'])\" expand=\"block\">Volver Home</ion-button>\n</ion-content>\n");
 
 /***/ })
 
