@@ -16,12 +16,14 @@ export class DataService {
     })
   }
   
-  apiURL = 'http://Sebacaffi.github.io/data/db.json'
+  apiURL = 'https://Sebacaffi.github.io/data/db.json'
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   getAPI(){
-    return this.http.get<Respuesta>(this.apiURL);
+    return this.http.get<Respuesta>(this.apiURL).pipe(
+      retry(3)
+    );
   }
 
   createViaje(conductor):Observable<any>{

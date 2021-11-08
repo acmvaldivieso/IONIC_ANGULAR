@@ -1,5 +1,53 @@
 (self["webpackChunkTeLlevoAPP"] = self["webpackChunkTeLlevoAPP"] || []).push([["src_app_pages_pasajero_pasajero_module_ts"],{
 
+/***/ 4945:
+/*!****************************************************************!*\
+  !*** ./node_modules/rxjs/_esm2015/internal/operators/retry.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "retry": () => (/* binding */ retry)
+/* harmony export */ });
+/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Subscriber */ 7393);
+
+function retry(count = -1) {
+    return (source) => source.lift(new RetryOperator(count, source));
+}
+class RetryOperator {
+    constructor(count, source) {
+        this.count = count;
+        this.source = source;
+    }
+    call(subscriber, source) {
+        return source.subscribe(new RetrySubscriber(subscriber, this.count, this.source));
+    }
+}
+class RetrySubscriber extends _Subscriber__WEBPACK_IMPORTED_MODULE_0__.Subscriber {
+    constructor(destination, count, source) {
+        super(destination);
+        this.count = count;
+        this.source = source;
+    }
+    error(err) {
+        if (!this.isStopped) {
+            const { source, count } = this;
+            if (count === 0) {
+                return super.error(err);
+            }
+            else if (count > -1) {
+                this.count = count - 1;
+            }
+            source.subscribe(this._unsubscribeAndRecycle());
+        }
+    }
+}
+//# sourceMappingURL=retry.js.map
+
+/***/ }),
+
 /***/ 7879:
 /*!***********************************************************!*\
   !*** ./src/app/pages/pasajero/pasajero-routing.module.ts ***!
@@ -185,9 +233,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DataService": () => (/* binding */ DataService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 4945);
+
 
 
 
@@ -200,17 +250,20 @@ let DataService = class DataService {
                 'Access-Control-Allow-Origin': '*'
             })
         };
-        this.apiURL = 'http://Sebacaffi.github.io/data/db.json';
+        this.apiURL = 'https://Sebacaffi.github.io/data/db.json';
     }
     getAPI() {
-        return this.http.get(this.apiURL);
+        return this.http.get(this.apiURL).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.retry)(3));
+    }
+    createViaje(conductor) {
+        return this.http.post(this.apiURL + 'viaje', conductor, this.httpOptions).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.retry)(3));
     }
 };
 DataService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient }
 ];
-DataService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+DataService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
         providedIn: 'root'
     })
 ], DataService);
@@ -245,7 +298,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n  <app-header></app-header>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n  <app-logo></app-logo>\r\n\r\n  <ion-card *ngFor=\"let dato of viaje\">\r\n\r\n    <ion-card-header>\r\n      <ion-item>\r\n        <ion-avatar slot=\"end\">\r\n          <img [src]=\"dato.imagen\">\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <ion-card-subtitle>Carrera: {{dato.destino}}</ion-card-subtitle>\r\n         <ion-card-title >{{dato.conductor}}</ion-card-title>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-header>\r\n\r\n    <ion-card-content>\r\n      <ion-label>Destino: {{dato.destino}}</ion-label><br>\r\n      <ion-label>Ruta: {{dato.ruta}}</ion-label><br>\r\n      <ion-label>Patente: {{dato.patente}}</ion-label><br>\r\n      <ion-label>Valor: {{dato.valor}}</ion-label><br>\r\n      <br>\r\n      <ion-label>Sobre mi: {{dato.resumen}}</ion-label>\r\n    </ion-card-content>\r\n    \r\n    <ion-button class=\"setButton\" (click)=\"reservarViaje()\" size=\"large\" expand=\"block\">RESERVAR</ion-button>\r\n  </ion-card> \r\n\r\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n  <app-header></app-header>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n  <app-logo></app-logo>\r\n\r\n  <ion-card *ngFor=\"let dato of viaje\">\r\n\r\n    <ion-card-header>\r\n      <ion-item>\r\n        <ion-avatar slot=\"end\">\r\n          <img [src]=\"dato.imagen\">\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <ion-card-subtitle color=\"dark\">Carrera: {{dato.destino}}</ion-card-subtitle>\r\n         <ion-card-title color=\"dark\" >{{dato.conductor}}</ion-card-title>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-header>\r\n\r\n    <ion-card-content>\r\n      <ion-label color=\"dark\">Destino: {{dato.destino}}</ion-label><br>\r\n      <ion-label color=\"dark\">Ruta: {{dato.ruta}}</ion-label><br>\r\n      <ion-label color=\"dark\">Patente: {{dato.patente}}</ion-label><br>\r\n      <ion-label color=\"dark\">Valor: {{dato.valor}}</ion-label><br>\r\n      <br>\r\n      <ion-label>Sobre mi: {{dato.resumen}}</ion-label>\r\n    </ion-card-content>\r\n    \r\n    <ion-button class=\"setButton\" (click)=\"reservarViaje()\" size=\"large\" expand=\"block\">RESERVAR</ion-button>\r\n  </ion-card> \r\n\r\n</ion-content>");
 
 /***/ })
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 
-
+//declaracion de variables
 declare var mapboxgl: any;
 declare var MapboxGeocoder: any;
 
@@ -20,6 +20,7 @@ export class MapsComponent implements OnInit {
   
   ngOnInit() {
 
+    //Creación de mapa con coordenadas por defecto y así mostrar la animación al momento de presionar la ubicación actual
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2ViYWNhZmZpIiwiYSI6ImNrdms2aWIxMjVyMDcycG1zdDl1Y3h6ajMifQ.mhVzhcoHBED9TvS0FVR_Yg';
     const map = new mapboxgl.Map({ 
       container: 'map', 
@@ -32,7 +33,7 @@ export class MapsComponent implements OnInit {
       //recalcular las dimesiones del mapa al momento de la carga
       map.resize();
 
-      //Marker
+      //Marker personalizado
       new mapboxgl.Marker()
         .setLngLat([-71.545821, -33.009761])
         .addTo(map);
@@ -87,6 +88,7 @@ export class MapsComponent implements OnInit {
 
       const layers = map.getStyle().layers;
 
+      //Implementación de edificios 3D en el mapa
       const labelLayerId = layers.find(
         (layer) => layer.type === 'symbol' && layer.layout['text-field']
       ).id;
@@ -129,7 +131,11 @@ export class MapsComponent implements OnInit {
       accessToken: mapboxgl.accessToken
     }));
 
+
+    //Control de navegacipon dentro del mapa
     map.addControl(new mapboxgl.NavigationControl());
+
+    //Botón de localización dentro del mapa
     map.addControl(new mapboxgl.GeolocateControl({
       positionOptions: {
           enableHighAccuracy: true
@@ -139,8 +145,7 @@ export class MapsComponent implements OnInit {
 
   }
 
-  //Metodo para obtener coordendas desde el GPS
-
+  //Metodo para obtener coordendas desde el GPS de forma nativa
   geoNativo(){
     this.geolocation.getCurrentPosition().then((resp) => {
       this.long = resp.coords.longitude;

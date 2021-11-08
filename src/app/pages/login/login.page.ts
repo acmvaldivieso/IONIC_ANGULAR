@@ -21,9 +21,13 @@ export class LoginPage  implements OnInit {
     pass:''
   };
   
+
+  //Validaciones en bruto de las credenciales del LOGIN, el usuario ingresado se almacena en el localStorage para lograr
+  //la persistencia del dato y no perderlo al refrescar la page.
   async ingresar(page){
     if(this.user.usuario == 'sebastian' && this.user.pass == '123' || this.user.usuario == 'alain' && this.user.pass == '123')
-    {  
+    { 
+      //Gestión del usuario en localStorage
       localStorage.setItem('usuario',this.user.usuario);
       localStorage.setItem('ingresado', 'true');
       const navigationExtras: NavigationExtras={};
@@ -39,42 +43,18 @@ export class LoginPage  implements OnInit {
       });
       await alert.present();
       this.navController.navigateRoot(page);
+      //Blanquear el nombre y el usuario.
       this.user.pass='';
       this.user.usuario='';
     }
   }
 
+
+  //Navegación a la page Hombre, transportando el dato del nombre del usuario ingresado
   navegar(page){
     const navegationExtras: NavigationExtras = {
       state:{nombre: this.user.usuario}
     }
     this.router.navigate(page, navegationExtras);
   }
-
-   // async presentLoading() {
-  //   const loading = await this.loadingController.create({
-  //     cssClass: 'my-custom-class',
-  //     message: 'Please wait...',
-  //     duration: 2000
-  //   });
-  //   await loading.present();
-
-  //   const { role, data } = await loading.onDidDismiss();
-  //   console.log('Loading dismissed!');
-  // }
-
-  // async presentLoadingWithOptions() {
-  //   const loading = await this.loadingController.create({
-  //     spinner: null,
-  //     duration: 5000,
-  //     message: 'Click the backdrop to dismiss early...',
-  //     translucent: true,
-  //     cssClass: 'custom-class custom-loading',
-  //     backdropDismiss: true
-  //   });
-  //   await loading.present();
-
-  //   const { role, data } = await loading.onDidDismiss();
-  //   console.log('Loading dismissed with role:', role);
-  // }
 }
