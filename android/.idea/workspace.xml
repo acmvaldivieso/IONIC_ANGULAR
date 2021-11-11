@@ -11,19 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a220af36-7a16-42da-a555-bdc1bbda5b3b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_home_home_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_home_home_module_ts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_home_home_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_home_home_module_ts.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_login_login_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_login_login_module_ts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_login_login_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_login_login_module_ts.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_pasajero_pasajero_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_pasajero_pasajero_module_ts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_pasajero_pasajero_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_pasajero_pasajero_module_ts.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/pages/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/home/home.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/pages/home/home.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/home/home.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/pages/pasajero/pasajero.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/pasajero/pasajero.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/services/data.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/theme/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/theme/variables.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
