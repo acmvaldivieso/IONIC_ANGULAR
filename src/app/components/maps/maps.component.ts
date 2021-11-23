@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 //declaracion de variables
 declare var mapboxgl: any;

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Respuesta, Viaje } from '../interfaces/viaje-interface';
+import { Respuesta } from '../interfaces/viaje-interface';
 import { retry } from 'rxjs/operators'; 
 import { Observable } from 'rxjs';
 
