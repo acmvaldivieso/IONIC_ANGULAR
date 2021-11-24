@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { DataService } from '../../services/data.service';
 
-import { Respuesta, Viaje } from 'src/app/interfaces/viaje-interface';
+import { Viaje } from 'src/app/interfaces/viaje-interface';
 
 @Component({
   selector: 'app-pasajero',

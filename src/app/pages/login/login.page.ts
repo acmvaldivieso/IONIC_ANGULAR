@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
+import { DataService } from '../../services/data.service';
+import { Credenciales } from 'src/app/interfaces/viaje-interface';
 
 
 @Component({
@@ -11,30 +13,32 @@ import { LoadingController } from '@ionic/angular';
 })
 export class LoginPage  implements OnInit {
 
-  constructor(private router:Router, public alertController: AlertController, public navController: NavController,public loadingController: LoadingController) { }
+  credenciales: Credenciales[] = [];
+
+  constructor(private router:Router, public alertController: AlertController, public navController: NavController,
+              public loadingController: LoadingController, private dataService: DataService) { }
 
   ngOnInit() {
+    //Metodo para llamar el arreglo de la API
+    this.dataService.getAPI().subscribe(resp =>
+      {
+        console.log(resp);
+        this.credenciales.push(...resp.credenciales);
+      })
   }
 
   user={
     usuario:'',
     pass:''
   };
-  
 
-  //Validaciones en bruto de las credenciales del LOGIN, el usuario ingresado se almacena en el localStorage para lograr
-  //la persistencia del dato y no perderlo al refrescar la page.
+  //Validaciones a traves de la API.
+  //la persistencia del dato y no perderlo al refrescar la page. Arrastro el dato desde la API al localStorage
   async ingresar(page){
-    if(this.user.usuario == 'sebastian' && this.user.pass == '123' || this.user.usuario == 'alain' && this.user.pass == '123')
-    { 
-      //Gestión del usuario en localStorage
-      localStorage.setItem('usuario',this.user.usuario);
-      localStorage.setItem('ingresado', 'true');
-      const navigationExtras: NavigationExtras={};
-      this.router.navigate(page, navigationExtras);
-      this.user.pass='';
-      this.user.usuario='';
-    } else if (this.user.usuario != 'sebastian' && this.user.usuario != 'alain' || this.user.pass != '123'){
+
+    const login=this.credenciales.find(c => c.username === this.user.usuario)
+
+    if (login === undefined){
       const alert = await this.alertController.create({
         message: 'Usuario y/o Contraseña invalidos',
         buttons: [{
@@ -47,8 +51,17 @@ export class LoginPage  implements OnInit {
       this.user.pass='';
       this.user.usuario='';
     }
+    else if(this.user.usuario === login.username && this.user.pass == login.password)
+    { 
+      //Gestión del usuario en localStorage
+      localStorage.setItem('usuario',login.nombre);
+      localStorage.setItem('ingresado', 'true');
+      const navigationExtras: NavigationExtras={};
+      this.router.navigate(page, navigationExtras);
+      this.user.pass='';
+      this.user.usuario='';
+    }
   }
-
 
   //Navegación a la page Hombre, transportando el dato del nombre del usuario ingresado
   navegar(page){

@@ -1,5 +1,6 @@
 export interface Respuesta {
   viaje: Viaje[];
+  credenciales: Credenciales[];
 }
 
 export interface Viaje {
@@ -14,4 +15,12 @@ export interface Viaje {
   patente: string;
   carrera: string;
   imagen: string;
+}
+
+export interface Credenciales{
+  id: number;
+  username: string;
+  password: string;
+  nombre: string;
+  email: string;
 }
