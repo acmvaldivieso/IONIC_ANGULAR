@@ -10,7 +10,8 @@ describe('MapsComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MapsComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot()],
+      providers: [Geolocation]
     }).compileComponents();
 
     fixture = TestBed.createComponent(MapsComponent);

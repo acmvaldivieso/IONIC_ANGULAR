@@ -14,12 +14,6 @@ export class HomePage implements OnInit{
 
   constructor(private router:Router, public alertController: AlertController, private activeRoute: ActivatedRoute) {
     
-    //Captura del nombre desde el LOGIN
-    this.activeRoute.queryParams.subscribe(params => {
-      if(this.router.getCurrentNavigation().extras.state){
-        this.dato = this.router.getCurrentNavigation().extras.state.nombre;
-      }
-    });
   }
 
   ngOnInit() {

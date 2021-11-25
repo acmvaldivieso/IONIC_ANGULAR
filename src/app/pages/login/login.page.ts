@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
 import { DataService } from '../../services/data.service';
@@ -56,8 +56,7 @@ export class LoginPage  implements OnInit {
       //Gestión del usuario en localStorage
       localStorage.setItem('usuario',login.nombre);
       localStorage.setItem('ingresado', 'true');
-      const navigationExtras: NavigationExtras={};
-      this.router.navigate(page, navigationExtras);
+      this.router.navigate(page);
       this.user.pass='';
       this.user.usuario='';
     }
@@ -65,9 +64,6 @@ export class LoginPage  implements OnInit {
 
   //Navegación a la page Hombre, transportando el dato del nombre del usuario ingresado
   navegar(page){
-    const navegationExtras: NavigationExtras = {
-      state:{nombre: this.user.usuario}
-    }
-    this.router.navigate(page, navegationExtras);
+    this.router.navigate(page);
   }
 }
