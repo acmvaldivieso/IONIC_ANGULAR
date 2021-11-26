@@ -6,13 +6,19 @@
 <ion-content>
   <app-logo></app-logo>
 
-  <!-- Se aplica un ngFor para recorrer el arrglo y así crear las cards necesarias -->
+  <!-- Se aplica un ngFor para recorrer el arrglo y así crear las cards necesaria_
+    
+    
+    
+    
+    
+    s -->
   <ion-card *ngFor="let dato of viaje">
 
     <ion-card-header>
       <ion-item>
         <ion-avatar slot="end">
-          <img [src]="dato.imagen">
+          <img alt="imagen" [src]="dato.imagen">
         </ion-avatar>
         <ion-label>
           <ion-card-subtitle color="dark">Carrera: {{dato.destino}}</ion-card-subtitle>

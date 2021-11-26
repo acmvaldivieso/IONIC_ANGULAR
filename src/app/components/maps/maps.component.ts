@@ -19,7 +19,6 @@ export class MapsComponent implements OnInit {
   constructor(public geolocation: Geolocation) { }
   
   ngOnInit() {
-
     //Creación de mapa con coordenadas por defecto y así mostrar la animación al momento de presionar la ubicación actual
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2ViYWNhZmZpIiwiYSI6ImNrdms2aWIxMjVyMDcycG1zdDl1Y3h6ajMifQ.mhVzhcoHBED9TvS0FVR_Yg';
     const map = new mapboxgl.Map({ 
