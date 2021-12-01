@@ -34,15 +34,4 @@ datos:any
     });
     await alert.present();
   }
-
-  async generaViaje(){
-    const alert = await this.alertController.create({
-      message: 'Viaje generado!',
-      buttons: [{
-        text: 'Aceptar',
-        handler: () => {this.router.navigate(['/home']);}
-      }]
-    });
-    await alert.present();
-  }
 }

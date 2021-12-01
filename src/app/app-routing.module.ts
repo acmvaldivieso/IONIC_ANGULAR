@@ -41,10 +41,15 @@ const routes: Routes = [
     canActivate:[ValidadoGuard]
   },
   {
+    path: 'crear-viaje',
+    loadChildren: () => import('./pages/crear-viaje/crear-viaje.module').then( m => m.CrearViajePageModule),
+    canActivate:[ValidadoGuard]
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
-
+  
 ];
 
 @NgModule({
