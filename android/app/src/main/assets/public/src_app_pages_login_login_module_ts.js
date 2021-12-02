@@ -95,12 +95,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LoginPage": () => (/* binding */ LoginPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_login_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./login.page.html */ 1021);
 /* harmony import */ var _login_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login.page.scss */ 8781);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/data.service */ 2468);
+
 
 
 
@@ -109,29 +111,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginPage = class LoginPage {
-    constructor(router, alertController, navController, loadingController) {
+    constructor(router, alertController, navController, loadingController, dataService) {
         this.router = router;
         this.alertController = alertController;
         this.navController = navController;
         this.loadingController = loadingController;
+        this.dataService = dataService;
+        this.credenciales = [];
         this.user = {
             usuario: '',
             pass: ''
         };
     }
     ngOnInit() {
+        //Metodo para llamar el arreglo de la API
+        this.dataService.getAPI().subscribe(resp => {
+            console.log(resp);
+            this.credenciales.push(...resp.credenciales);
+        });
     }
+    //Validaciones a traves de la API.
+    //la persistencia del dato y no perderlo al refrescar la page. Arrastro el dato desde la API al localStorage
     ingresar(page) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, function* () {
-            if (this.user.usuario == 'sebastian' && this.user.pass == '123' || this.user.usuario == 'alain' && this.user.pass == '123') {
-                localStorage.setItem('usuario', this.user.usuario);
-                localStorage.setItem('ingresado', 'true');
-                const navigationExtras = {};
-                this.router.navigate(page, navigationExtras);
-                this.user.pass = '';
-                this.user.usuario = '';
-            }
-            else if (this.user.usuario != 'sebastian' && this.user.usuario != 'alain' || this.user.pass != '123') {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+            const login = this.credenciales.find(c => c.username === this.user.usuario);
+            if (login === undefined) {
                 const alert = yield this.alertController.create({
                     message: 'Usuario y/o Contraseña invalidos',
                     buttons: [{
@@ -140,26 +144,37 @@ let LoginPage = class LoginPage {
                 });
                 yield alert.present();
                 this.navController.navigateRoot(page);
+                //Blanquear el nombre y el usuario.
+                this.user.pass = '';
+                this.user.usuario = '';
+            }
+            else if (this.user.usuario === login.username && this.user.pass == login.password) {
+                //Gestión del usuario en localStorage
+                localStorage.setItem('usuario', login.nombre);
+                localStorage.setItem('ingresado', 'true');
+                this.router.navigate(page);
                 this.user.pass = '';
                 this.user.usuario = '';
             }
         });
     }
+    //Navegación a la page Hombre, transportando el dato del nombre del usuario ingresado
     navegar(page) {
-        const navegationExtras = {
-            state: { nombre: this.user.usuario }
-        };
-        this.router.navigate(page, navegationExtras);
+        this.router.navigate(page);
+    }
+    submit() {
+        console.log("Ingresado con exito!");
     }
 };
 LoginPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.AlertController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.NavController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.LoadingController }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.AlertController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.NavController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.LoadingController },
+    { type: _services_data_service__WEBPACK_IMPORTED_MODULE_2__.DataService }
 ];
-LoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+LoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-login',
         template: _raw_loader_login_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_login_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

@@ -61,7 +61,7 @@ const routes = [
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/login/login.module */ 1053)).then(m => m.LoginPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/login/login.module */ 1053)).then(m => m.LoginPageModule),
         canActivate: [_guards_no_validado_guard__WEBPACK_IMPORTED_MODULE_0__.NoValidadoGuard]
     },
     {
@@ -76,7 +76,12 @@ const routes = [
     },
     {
         path: 'pasajero',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_pasajero_pasajero_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pasajero/pasajero.module */ 6124)).then(m => m.PasajeroPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_pasajero_pasajero_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/pasajero/pasajero.module */ 6124)).then(m => m.PasajeroPageModule),
+        canActivate: [_guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__.ValidadoGuard]
+    },
+    {
+        path: 'crear-viaje',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("src_app_pages_crear-viaje_crear-viaje_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/crear-viaje/crear-viaje.module */ 7065)).then(m => m.CrearViajePageModule),
         canActivate: [_guards_validado_guard__WEBPACK_IMPORTED_MODULE_1__.ValidadoGuard]
     },
     {
@@ -176,7 +181,7 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
             _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule.forRoot(),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__.BrowserAnimationsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpClientModule
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpClientModule,
         ],
         providers: [_ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_2__.Geolocation, {
                 provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouteReuseStrategy,

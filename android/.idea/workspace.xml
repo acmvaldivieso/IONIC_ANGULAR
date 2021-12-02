@@ -1,49 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a220af36-7a16-42da-a555-bdc1bbda5b3b" name="Default Changelist" comment="">
+    <list default="true" id="133fe401-eac2-42c8-8f60-bedefc8de597" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/android.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/common.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/common.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/cordova_plugins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_conductor_conductor_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_conductor_conductor_module_ts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_conductor_conductor_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_conductor_conductor_module_ts.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_home_home_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_home_home_module_ts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_home_home_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_home_home_module_ts.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_login_login_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_login_login_module_ts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_login_login_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_login_login_module_ts.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_not-found_not-found_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_not-found_not-found_module_ts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_not-found_not-found_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_not-found_not-found_module_ts.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_pasajero_pasajero_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_pasajero_pasajero_module_ts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_pasajero_pasajero_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_pasajero_pasajero_module_ts.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_welcome_welcome_module_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_welcome_welcome_module_ts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_welcome_welcome_module_ts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/src_app_pages_welcome_welcome_module_ts.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/pages/crear-viaje/crear-viaje.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/crear-viaje/crear-viaje.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/pages/crear-viaje/crear-viaje.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/crear-viaje/crear-viaje.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/pages/crear-viaje/crear-viaje.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/crear-viaje/crear-viaje.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/pages/crear-viaje/crear-viaje.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/crear-viaje/crear-viaje.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/pages/login/login.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/login/login.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/pages/pasajero/pasajero.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/pages/pasajero/pasajero.page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[b2871715]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\SebaCaffi\.android\avd\Pixel_4a_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="android" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="20MnHot2D9pjuhfBV9KbOyTq19a" />
+  <component name="ProjectId" id="21hr6ciicxm5xz1mNEaQVN5jIGW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -52,7 +85,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -117,11 +149,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a220af36-7a16-42da-a555-bdc1bbda5b3b" name="Default Changelist" comment="" />
-      <created>1635863241241</created>
+      <changelist id="133fe401-eac2-42c8-8f60-bedefc8de597" name="Default Changelist" comment="" />
+      <created>1638403989184</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1635863241241</updated>
+      <updated>1638403989184</updated>
     </task>
     <servers />
   </component>

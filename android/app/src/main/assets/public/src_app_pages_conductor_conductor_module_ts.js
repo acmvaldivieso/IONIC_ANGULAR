@@ -134,18 +134,6 @@ let ConductorPage = class ConductorPage {
             yield alert.present();
         });
     }
-    generaViaje() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, function* () {
-            const alert = yield this.alertController.create({
-                message: 'Viaje generado!',
-                buttons: [{
-                        text: 'Aceptar',
-                        handler: () => { this.router.navigate(['/home']); }
-                    }]
-            });
-            yield alert.present();
-        });
-    }
 };
 ConductorPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
@@ -189,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n  <app-header></app-header>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n  <app-maps></app-maps>\r\n  <ion-button  class=\"setButton\" (click)=\"generaViaje()\" size=\"large\" expand=\"block\">GENERAR VIAJE</ion-button> \r\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n  <app-header></app-header>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n  <app-maps></app-maps>\r\n  <ion-button (click)=\"navegar(['/crear-viaje'])\" class=\"setButton\" size=\"large\" expand=\"block\">REGISTRAR VIAJE</ion-button> \r\n</ion-content>");
 
 /***/ })
 

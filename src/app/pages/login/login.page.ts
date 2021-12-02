@@ -66,4 +66,8 @@ export class LoginPage  implements OnInit {
   navegar(page){
     this.router.navigate(page);
   }
+
+  submit(){
+    console.log("Ingresado con exito!");
+  }
 }

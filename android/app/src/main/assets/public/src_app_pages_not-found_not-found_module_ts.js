@@ -110,6 +110,7 @@ let NotFoundPage = class NotFoundPage {
         this.router = router;
     }
     ngAfterViewInit() {
+        //Creación de la animación del GIF implementado en el HTML
         const animation = this.animationCtrl
             .create()
             .addElement(this.animar404.nativeElement)
@@ -122,6 +123,7 @@ let NotFoundPage = class NotFoundPage {
     }
     ngOnInit() {
     }
+    //Metodo generico para la navegación entre las pages
     navegar(page) {
         this.router.navigate(page);
     }

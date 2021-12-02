@@ -113,11 +113,6 @@ let HomePage = class HomePage {
         this.alertController = alertController;
         this.activeRoute = activeRoute;
         this.dato = localStorage.getItem("usuario");
-        this.activeRoute.queryParams.subscribe(params => {
-            if (this.router.getCurrentNavigation().extras.state) {
-                this.dato = this.router.getCurrentNavigation().extras.state.nombre;
-            }
-        });
     }
     ngOnInit() {
     }
@@ -186,7 +181,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n\r\n  <ion-chip class=\"setAvatar\">\r\n    <ion-avatar>\r\n      <img src=\"\\assets\\Spider-Man.jpg\">\r\n    </ion-avatar>\r\n    <ion-label color=\"dark\">{{dato}}</ion-label> \r\n  </ion-chip>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n  <app-logo></app-logo>\r\n\r\n  <p class=\"set-parrafo\">Seleccione una modalidad de viaje</p>\r\n\r\n  <ion-button class=\"setBConductor\" (click)=\"navegar(['/conductor'])\" size=\"large\" expand=\"block\">CONDUCTOR</ion-button> \r\n  <ion-button (click)=\"navegar(['/pasajero'])\" size=\"large\" expand=\"block\">PASAJERO</ion-button>\r\n  <ion-button color=\"danger\" (click)=\"navegar(['/not-found'])\" size=\"large\" expand=\"block\">NO PRESIONAR</ion-button> \r\n\r\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-toolbar>\r\n  <ion-icon class=\"set-icon-exit slot\" slot=\"end\" (click)=\"salirSesion()\" name=\"exit-outline\"></ion-icon>\r\n\r\n  <ion-chip class=\"setAvatar\">\r\n    <ion-avatar>\r\n      <img alt=\"avatar\" src=\"\\assets\\Spider-Man.jpg\">\r\n    </ion-avatar>\r\n    <ion-label color=\"dark\">{{dato}}</ion-label> \r\n  </ion-chip>\r\n</ion-toolbar>\r\n\r\n<ion-content>\r\n  <app-logo></app-logo>\r\n\r\n  <p class=\"set-parrafo\">Seleccione una modalidad de viaje</p>\r\n\r\n  <ion-button class=\"setBConductor\" (click)=\"navegar(['/conductor'])\" size=\"large\" expand=\"block\">CONDUCTOR</ion-button> \r\n  <ion-button (click)=\"navegar(['/pasajero'])\" size=\"large\" expand=\"block\">PASAJERO</ion-button>\r\n  <ion-button color=\"danger\" (click)=\"navegar(['/not-found'])\" size=\"large\" expand=\"block\">NO PRESIONAR</ion-button> \r\n\r\n</ion-content>");
 
 /***/ })
 

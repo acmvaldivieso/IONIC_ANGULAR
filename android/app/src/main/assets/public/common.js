@@ -438,6 +438,104 @@ const openURL = async (url, ev, direction, animation) => {
 
 
 
+/***/ }),
+
+/***/ 4945:
+/*!****************************************************************!*\
+  !*** ./node_modules/rxjs/_esm2015/internal/operators/retry.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "retry": () => (/* binding */ retry)
+/* harmony export */ });
+/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Subscriber */ 7393);
+
+function retry(count = -1) {
+    return (source) => source.lift(new RetryOperator(count, source));
+}
+class RetryOperator {
+    constructor(count, source) {
+        this.count = count;
+        this.source = source;
+    }
+    call(subscriber, source) {
+        return source.subscribe(new RetrySubscriber(subscriber, this.count, this.source));
+    }
+}
+class RetrySubscriber extends _Subscriber__WEBPACK_IMPORTED_MODULE_0__.Subscriber {
+    constructor(destination, count, source) {
+        super(destination);
+        this.count = count;
+        this.source = source;
+    }
+    error(err) {
+        if (!this.isStopped) {
+            const { source, count } = this;
+            if (count === 0) {
+                return super.error(err);
+            }
+            else if (count > -1) {
+                this.count = count - 1;
+            }
+            source.subscribe(this._unsubscribeAndRecycle());
+        }
+    }
+}
+//# sourceMappingURL=retry.js.map
+
+/***/ }),
+
+/***/ 2468:
+/*!******************************************!*\
+  !*** ./src/app/services/data.service.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DataService": () => (/* binding */ DataService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 4945);
+
+
+
+
+let DataService = class DataService {
+    constructor(http) {
+        this.http = http;
+        this.httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            })
+        };
+        this.apiURL = 'https://Sebacaffi.github.io/data/db.json';
+    }
+    getAPI() {
+        return this.http.get(this.apiURL).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.retry)(3));
+    }
+    createViaje(conductor) {
+        return this.http.post(this.apiURL + 'viaje', conductor, this.httpOptions).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.retry)(3));
+    }
+};
+DataService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient }
+];
+DataService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
+        providedIn: 'root'
+    })
+], DataService);
+
+
+
 /***/ })
 
 }]);

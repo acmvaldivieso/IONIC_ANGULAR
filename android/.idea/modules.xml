@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/android.iml" filepath="$PROJECT_DIR$/.idea/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/149117226/android.capacitor-android.iml" filepath="$PROJECT_DIR$/.idea/modules/149117226/android.capacitor-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1267727753/android.capacitor-app.iml" filepath="$PROJECT_DIR$/.idea/modules/1267727753/android.capacitor-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/capacitor-cordova-android-plugins/android.capacitor-cordova-android-plugins.iml" filepath="$PROJECT_DIR$/.idea/modules/capacitor-cordova-android-plugins/android.capacitor-cordova-android-plugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-118573788/android.capacitor-haptics.iml" filepath="$PROJECT_DIR$/.idea/modules/-118573788/android.capacitor-haptics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/897823807/android.capacitor-keyboard.iml" filepath="$PROJECT_DIR$/.idea/modules/897823807/android.capacitor-keyboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/432421136/android.capacitor-status-bar.iml" filepath="$PROJECT_DIR$/.idea/modules/432421136/android.capacitor-status-bar.iml" />
     </modules>
   </component>
 </project>

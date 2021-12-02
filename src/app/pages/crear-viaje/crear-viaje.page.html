@@ -1,9 +1,46 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>crear-viaje</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar>
+  <ion-icon class="set-icon-exit slot" slot="end" (click)="salirSesion()" name="exit-outline"></ion-icon>
+  <app-header></app-header>
+</ion-toolbar>
 
 <ion-content>
-  <ion-button (click)="generaViaje()" class="setButton" size="large" expand="block">GENERAR VIAJE</ion-button>
+  <app-logo></app-logo> 
+
+  <div class="ion-padding">
+
+    <form #formulario="ngForm" (ngSubmit)="submit()">
+
+      <ion-item>
+        <ion-label position="floating">Destino</ion-label>
+        <ion-input  required placeholder="Destino final" name="destino" [(ngModel)]="datos.destino" type="text" clear-input='true' [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">Ruta</ion-label>
+        <ion-input  required placeholder="Ruta del viaje" name="ruta" [(ngModel)]="datos.ruta" type="text" clear-input='true' [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Patente</ion-label>
+        <ion-input  required placeholder="Patente vehículo" name="patente" [(ngModel)]="datos.patente" type="text" clear-input='true' [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Valor</ion-label>
+        <ion-input  required placeholder="Valor del viaje" name="valor" [(ngModel)]="datos.valor" type="number" clear-input='true' [ngModelOptions]="{standalone: true}">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea required placeholder="Escriba información sobre usted" [(ngModel)]="datos.descripcion" type="text" clear-input='true' [ngModelOptions]="{standalone: true}"></ion-textarea>
+      </ion-item>
+
+      <ion-button (click)="generaViaje()" type="submit" expand="block" [disabled]="formulario.invalid">GENERAR VIAJE</ion-button>
+    </form>
+  </div>
+
 </ion-content>

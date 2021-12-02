@@ -114,6 +114,7 @@ let WelcomePage = class WelcomePage {
     navegar() {
         this.router.navigate(['/login']);
     }
+    //Implementación de animación en forma de "latido"
     ngAfterViewInit() {
         const animation = this.animationCtrl
             .create()
