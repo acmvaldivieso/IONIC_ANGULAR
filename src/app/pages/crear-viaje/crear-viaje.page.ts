@@ -37,6 +37,7 @@ export class CrearViajePage implements OnInit {
       }]
     });
     await alert.present();
+    this.enviarCorreo();
   }
 
   //Metodo para salir de la sesión, se implementa en botón en HTML
@@ -56,24 +57,20 @@ export class CrearViajePage implements OnInit {
 
   submit(){
     console.log("se creo el viaje");
-    this.datos.reset();
+    this.datos.reset;
   }
 
-  // async enviarCorreo(){  /* escribir en el archivo */
-  //   console.log('escribirEnArchivo');
- 
-  //   /* definimos la estructura del correo */
-  //   const email = {
-  //     to: '',
-  //     cc: '',
-  //     subject: 'Datos del viaje',
-  //     body: 'Se registró un viaje en nuestra apliación <strong>- TeLlevoAPP -</strong>\n' + localStorage.getItem('destino'),
-  //     isHtml: true
-  //   };
-
-  //   /* se envia correo */
-  //   this.emailComposer.open(email);
-
-  // }
-
+  //Falta corregir el salto de linea que no ocurre.
+  enviarCorreo(){
+    var feedback = document.createElement('a');
+    feedback.setAttribute('href', 
+    'mailto://sebastian.caffi@gmail.com?subject=Detalles%20del%20viaje&body=Su%20viaje:'
+    +'\n%20Destino:%20'+localStorage.getItem('destino')
+    +'\n%20Ruta:%20'+localStorage.getItem('ruta')
+    +'\n%20Patente:%20'+localStorage.getItem('patente')
+    +'\n%20Valor:%20'+localStorage.getItem('valor')
+    +'\n%20Descripcion:%20'+localStorage.getItem('descripcion'));
+    feedback.click();
+    console.log('correo enviado');
+  } 
 }
