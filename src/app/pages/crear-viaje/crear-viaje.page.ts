@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-crear-viaje',
@@ -17,11 +18,28 @@ export class CrearViajePage implements OnInit {
     descripcion : ''
   }
 
-  constructor(private router: Router, public alertController: AlertController) { }
+  constructor(private router: Router, public alertController: AlertController, public toastController: ToastController) { }
 
   ngOnInit() {
   }
 
+  validarFormulario(){
+    if (this.datos.destino!='' && this.datos.ruta!='' && this.datos.patente!='' && this.datos.valor!='' && this.datos.descripcion!='') {
+      this.generaViaje();
+    } else {
+      this.presentToast();
+    }
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Debe llenar todos los campos!',
+      position: 'bottom',
+      duration: 2000
+    });
+    toast.present();
+  }
+  
   async generaViaje(){
     //almacenamiento de datos del formulario en el localStorage
     localStorage.setItem('destino',this.datos.destino);
@@ -33,12 +51,12 @@ export class CrearViajePage implements OnInit {
       message: 'Viaje generado!',
       buttons: [{
         text: 'Aceptar',
-        handler: () => {this.router.navigate(['/conductor']);}
+        handler: () => {this.router.navigate(['/conductor']),
+        this.limpiarFormulario();;}
       }]
     });
     await alert.present();
     this.enviarCorreo();
-    this.limpiarFormulario();
   }
 
   //Metodo para salir de la sesión, se implementa en botón en HTML

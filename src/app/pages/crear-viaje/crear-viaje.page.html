@@ -41,7 +41,7 @@
         <ion-textarea required placeholder="Escriba información sobre usted" [(ngModel)]="datos.descripcion" type="text" clear-input='true' [ngModelOptions]="{standalone: true}"></ion-textarea>
       </ion-item>
 
-      <ion-button (click)="generaViaje()" type="submit" expand="block" [disabled]="formulario.invalid">
+      <ion-button (click)="validarFormulario()" type="submit" expand="block" [disabled]="formulario.invalid">
         GENERAR VIAJE
       </ion-button>
     </form>
