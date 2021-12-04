@@ -64,7 +64,7 @@ export class CrearViajePage implements OnInit {
   enviarCorreo(){
     var feedback = document.createElement('a');
     feedback.setAttribute('href', 
-    'mailto://sebastian.caffi@gmail.com?subject=Detalles%20del%20viaje&body=Su%20viaje:'
+    'mailto:sebastian.caffi@gmail.com?subject=Detalles%20del%20viaje&body=Su%20viaje:'
     +'\n%20Destino:%20'+localStorage.getItem('destino')
     +'\n%20Ruta:%20'+localStorage.getItem('ruta')
     +'\n%20Patente:%20'+localStorage.getItem('patente')
