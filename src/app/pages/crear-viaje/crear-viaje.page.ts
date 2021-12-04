@@ -35,7 +35,8 @@ export class CrearViajePage implements OnInit {
     const toast = await this.toastController.create({
       message: 'Debe llenar todos los campos!',
       position: 'bottom',
-      duration: 2000
+      duration: 2000,
+      color: 'danger'
     });
     toast.present();
   }
