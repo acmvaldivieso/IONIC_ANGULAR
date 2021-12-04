@@ -6,9 +6,11 @@
 <ion-content>
   <app-logo></app-logo> 
 
+  <p class="set-parrafo">Ingrese los datos solicitados para registrar su viaje</p>
+
   <div class="ion-padding">
 
-    <form #formulario="ngForm" (ngSubmit)="submit()">
+    <form #formulario="ngForm" (ngSubmit)="submit">
 
       <ion-item>
         <ion-label position="floating">Destino</ion-label>
@@ -39,7 +41,9 @@
         <ion-textarea required placeholder="Escriba información sobre usted" [(ngModel)]="datos.descripcion" type="text" clear-input='true' [ngModelOptions]="{standalone: true}"></ion-textarea>
       </ion-item>
 
-      <ion-button (click)="generaViaje()" type="submit" expand="block" [disabled]="formulario.invalid">GENERAR VIAJE</ion-button>
+      <ion-button (click)="generaViaje()" type="submit" expand="block" [disabled]="formulario.invalid">
+        GENERAR VIAJE
+      </ion-button>
     </form>
   </div>
 

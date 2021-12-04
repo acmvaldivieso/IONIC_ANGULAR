@@ -38,6 +38,7 @@ export class CrearViajePage implements OnInit {
     });
     await alert.present();
     this.enviarCorreo();
+    this.limpiarFormulario();
   }
 
   //Metodo para salir de la sesión, se implementa en botón en HTML
@@ -55,8 +56,8 @@ export class CrearViajePage implements OnInit {
     await alert.present();
   }
 
-  submit(){
-    console.log("se creo el viaje");
+  limpiarFormulario(){
+    console.log("formulario borrado");
     this.datos.reset;
   }
 
@@ -65,11 +66,11 @@ export class CrearViajePage implements OnInit {
     var feedback = document.createElement('a');
     feedback.setAttribute('href', 
     'mailto:sebastian.caffi@gmail.com?subject=Detalles%20del%20viaje&body=Su%20viaje:'
-    +'\n%20Destino:%20'+localStorage.getItem('destino')
+    + '%20Destino:%20'+localStorage.getItem('destino')
     +'\n%20Ruta:%20'+localStorage.getItem('ruta')
     +'\n%20Patente:%20'+localStorage.getItem('patente')
     +'\n%20Valor:%20'+localStorage.getItem('valor')
-    +'\n%20Descripcion:%20'+localStorage.getItem('descripcion'));
+    +'\n%20Descripción:%20'+localStorage.getItem('descripcion'));
     feedback.click();
     console.log('correo enviado');
   } 
