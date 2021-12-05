@@ -6,11 +6,11 @@
   <p class="set-parrafo">Ingrese el correo de la cuenta para recuperar la contraseña</p>
 
   <div class="setForm">
-    <form #formulario="ngForm" (ngSubmit)="submit()">
+    <form #formulario="ngForm">
   
       <ion-item>
         <ion-input type="email" placeholder="correo@correo.com"name="email" 
-          [(ngModel)]="correo"pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+          [(ngModel)]="correo" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
         </ion-input>
       </ion-item >
   

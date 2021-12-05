@@ -9,6 +9,8 @@ import { AlertController } from '@ionic/angular';
 })
 export class PassPage implements OnInit {
 
+  correo: any;
+
   constructor(private router:Router, public alertController: AlertController) { }
 
   ngOnInit() {
@@ -19,7 +21,7 @@ export class PassPage implements OnInit {
   }
 
   /*Alerta para avisar que se envío la contraseña al correo */
-  async alertrecuperar(){
+  async correoEnviado(){
     const alert = await this.alertController.create({
       message: 'Contraseña enviada',
       buttons: [{
