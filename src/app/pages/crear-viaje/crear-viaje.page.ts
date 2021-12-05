@@ -80,12 +80,11 @@ export class CrearViajePage implements OnInit {
     this.datos.reset;
   }
 
-  //Falta corregir el salto de linea que no ocurre.
   enviarCorreo(){
     var feedback = document.createElement('a');
     feedback.setAttribute('href', 
     'mailto:sebastian.caffi@gmail.com?subject=Detalles%20del%20viaje&body=Su%20viaje:'
-    + '%20Destino:%20'+localStorage.getItem('destino')
+    +'%20Destino:%20'+localStorage.getItem('destino')
     +'\n%20Ruta:%20'+localStorage.getItem('ruta')
     +'\n%20Patente:%20'+localStorage.getItem('patente')
     +'\n%20Valor:%20'+localStorage.getItem('valor')
