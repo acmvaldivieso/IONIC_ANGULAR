@@ -83,12 +83,12 @@ export class CrearViajePage implements OnInit {
   enviarCorreo(){
     var feedback = document.createElement('a');
     feedback.setAttribute('href', 
-    'mailto:sebastian.caffi@gmail.com?subject=Detalles%20del%20viaje&body=Su%20viaje:'
+    'mailto:nan.bernal@profesor.duoc.cl?subject=Detalles%20del%20viaje&cc=sebastian.caffi@gmail.com&body=Su%20viaje:'
     +'%20Destino:%20'+localStorage.getItem('destino')
-    +'\n%20Ruta:%20'+localStorage.getItem('ruta')
-    +'\n%20Patente:%20'+localStorage.getItem('patente')
-    +'\n%20Valor:%20'+localStorage.getItem('valor')
-    +'\n%20Descripción:%20'+localStorage.getItem('descripcion'));
+    +'%20Ruta:%20'+localStorage.getItem('ruta')
+    +'%20Patente:%20'+localStorage.getItem('patente')
+    +'%20Valor:%20'+localStorage.getItem('valor')
+    +'%20Descripción:%20'+localStorage.getItem('descripcion'));
     feedback.click();
     console.log('correo enviado');
   } 
